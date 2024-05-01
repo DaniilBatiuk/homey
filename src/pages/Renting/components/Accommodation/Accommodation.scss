@@ -1,0 +1,62 @@
+@import "../../../../assets/styles/variables.scss";
+
+.accommodation {
+  &__content {
+    max-width: 780px;
+    width: 100%;
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+    @media (max-width: 700.98px) {
+      height: 70vh;
+    }
+
+    &::-webkit-scrollbar {
+      display: block;
+      width: 0px;
+      overflow: auto;
+      height: 0px;
+      background-color: rgb(207, 207, 207);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(167, 167, 167);
+      border-radius: 30px;
+    }
+  }
+  &__list-category {
+    margin-top: clamp(30px, 3vw, 50px);
+    display: flex;
+    flex-direction: column;
+    row-gap: clamp(15px, 2.5vw, 50px);
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 22px 30px;
+      border: 1px solid #333;
+      border-radius: 20px;
+      align-items: center;
+      column-gap: 10px;
+      cursor: pointer;
+      max-height: 120px;
+      &:hover {
+        background-color: #ececec;
+      }
+
+      &.active {
+        background-color: #e0dede;
+      }
+
+      &-text {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        row-gap: clamp(5px, 3vw, 10px);
+        & > h2 {
+          @extend %poppinsMedium18_20;
+        }
+      }
+    }
+  }
+}

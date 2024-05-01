@@ -1,0 +1,164 @@
+@import "../../assets/styles/variables.scss";
+
+.filter {
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    & > .search__wrapper {
+      bottom: -9%;
+    }
+  }
+
+  &__header-main {
+    position: relative;
+    width: fit-content;
+  }
+
+  &__img {
+    max-width: 1728px;
+    min-height: 309px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__text {
+    @extend %poppinsMedium35;
+    position: absolute;
+    top: 50%;
+    max-width: 1728px;
+
+    left: clamp(19px, 3vw, 30px);
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 15px;
+    margin-top: clamp(70px, 6.5vw, 95px);
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: block;
+      width: 0px;
+      overflow: auto;
+      height: 0px;
+      background-color: rgb(207, 207, 207);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(167, 167, 167);
+      border-radius: 30px;
+    }
+
+    &-item {
+      @extend %poppinsMedium18_20;
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 10px 25px;
+      text-wrap: nowrap;
+      cursor: pointer;
+      width: fit-content;
+
+      &:hover {
+        background-color: rgba(228, 227, 227, 0.71);
+      }
+
+      &.active {
+        background-color: rgba(196, 195, 195, 0.71);
+      }
+
+      &-dark {
+        background-color: #333;
+        color: white;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        &:hover {
+          background-color: #636363;
+        }
+      }
+    }
+  }
+  &__list-card {
+    margin-top: clamp(28px, 3.5vw, 55px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: clamp(20px, 2vw, 30px);
+
+    @media (max-width: 1200.98px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 850.98px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 514.98px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    & > .card {
+      width: auto;
+      min-height: 395px;
+    }
+  }
+
+  &__tags {
+    &-title {
+      @extend %poppinsSemiBold25;
+      margin-top: clamp(30px, 2.5vw, 40px);
+      margin-bottom: clamp(10px, 2.5vw, 20px);
+    }
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(10px, 2.5vw, 20px);
+    }
+
+    &-item {
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 8px clamp(10px, 2.5vw, 30px);
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(228, 227, 227, 0.71);
+      }
+
+      &.active {
+        background-color: rgba(196, 195, 195, 0.71);
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__prices {
+    display: flex;
+    margin-top: 15px;
+    column-gap: 130px;
+    &-item {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      padding: 7px 20px;
+      border: 1px solid #333;
+      border-radius: 10px;
+      align-items: center;
+    }
+  }
+}

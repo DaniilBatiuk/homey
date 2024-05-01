@@ -1,0 +1,186 @@
+@import "../../../../assets/styles/variables.scss";
+
+.booking-card {
+  position: relative;
+  flex: 0 1 536px;
+  min-width: 500px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: clamp(30px, 2.5vw, 45px) clamp(11px, 2.5vw, 38px);
+  height: fit-content;
+  @media (max-width: 1307px) {
+    min-width: 330px;
+    width: 100%;
+  }
+
+  &__confirm-sizes {
+    min-width: 320px;
+
+    @media (max-width: 1307px) {
+      order: 1;
+    }
+  }
+
+  &__price {
+    & > span {
+      @extend %poppinsMedium20;
+    }
+    margin-bottom: clamp(25px, 2.5vw, 35px);
+  }
+
+  &__dates {
+    display: flex;
+    border: 1px solid #222;
+    border-radius: 10px;
+  }
+
+  &__date {
+    width: 50%;
+    padding: clamp(10px, 2.5vw, 15px) clamp(20px, 2.5vw, 30px);
+    &:first-child {
+      border-right: 1px solid rgba(151, 151, 151, 0.71);
+      &:hover {
+        background-color: #dbdbdb;
+        cursor: pointer;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+    }
+
+    &:last-child {
+      &:hover {
+        background-color: #dbdbdb;
+        cursor: pointer;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+
+  &__who {
+    margin-block: clamp(20px, 2.5vw, 25px);
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: clamp(10px, 2.5vw, 15px) clamp(20px, 2.5vw, 30px);
+    &:hover {
+      background-color: #dbdbdb;
+      cursor: pointer;
+    }
+  }
+
+  &__line {
+    margin-block: clamp(25px, 2.5vw, 35px);
+    border-bottom: 0.5px solid rgba(151, 151, 151, 0.71);
+  }
+
+  &__calculate {
+    display: flex;
+    flex-direction: column;
+    row-gap: clamp(15px, 2.5vw, 25px);
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-name.underline {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-name {
+      @extend %poppinsMedium20;
+    }
+    &-price {
+      @extend %poppinsMedium20;
+    }
+  }
+
+  &__dropdown-menu {
+    top: 200px;
+    right: calc(50% - 332px / 2);
+    left: auto;
+    display: flex;
+
+    @media (max-width: 1307px) {
+      top: clamp(155px, 23vw, 190px);
+    }
+
+    &.people {
+      top: 310px;
+      right: calc(50% - clamp(320px, 62vw, 400px) / 2);
+
+      @media (max-width: 1307px) {
+        top: clamp(270px, 30vw, 300px);
+      }
+
+      @media (max-width: 600px) {
+        top: clamp(240px, 45vw, 280px);
+      }
+
+      &-confirm {
+        top: 58%;
+      }
+    }
+
+    &.date-confirm {
+      top: 43%;
+    }
+
+    & > .search__dropdown-menu__body-date {
+      border: none;
+    }
+    & > .search__dropdown-menu__body-who {
+      width: clamp(320px, 62vw, 400px);
+    }
+  }
+
+  &__main {
+    display: flex;
+    column-gap: 25px;
+  }
+
+  &__icon {
+    @extend %poppinsMedium18_20;
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+
+    & > svg {
+      width: clamp(22px, 2.5vw, 28px);
+      height: clamp(22px, 2.5vw, 28px);
+    }
+
+    & > span {
+      padding-top: 2px;
+      display: block;
+      height: fit-content;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: clamp(10px, 2.5vw, 15px);
+  }
+
+  &__title {
+    @extend %poppinsMedium20;
+    @include textAdaptive(1);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+
+    &-block {
+      width: clamp(131px, 13vw, 179px);
+    }
+  }
+}

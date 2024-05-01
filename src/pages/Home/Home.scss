@@ -1,0 +1,269 @@
+@import "../../assets/styles/variables.scss";
+
+.home {
+  &__title {
+    @extend %poppinsMedium20;
+  }
+
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: clamp(30px, 5vw, 45px);
+    padding-right: clamp(20px, 2.5vw, 30px);
+    & svg {
+      cursor: pointer;
+      width: clamp(32px, 5vw, 60px);
+      height: clamp(32px, 5vw, 60px);
+      @media (max-width: 460.98px) {
+        display: none;
+      }
+    }
+  }
+
+  &__card-list {
+    display: flex;
+    // padding-right: clamp(20px, 2.5vw, 30px);
+
+    @media (max-width: 1000.98px) {
+      padding-right: 0px;
+    }
+
+    & .swiper {
+      padding-right: 0px;
+      padding-bottom: 3px;
+      @media (max-width: 1700.98px) {
+        padding-right: 20px;
+      }
+    }
+
+    & .swiper .swiper-button-next,
+    & .swiper .swiper-button-prev {
+      width: clamp(30px, 4vw, 60px);
+      height: clamp(30px, 4vw, 60px);
+      margin-inline: 0px;
+      margin-top: -50px;
+
+      margin-right: 10px;
+
+      @media (max-width: 940.98px) {
+        display: none;
+      }
+    }
+  }
+
+  &__section {
+    margin-top: clamp(35px, 5vw, 45px);
+  }
+
+  &__benefits {
+    @extend %poppinsMedium35;
+    text-align: center;
+    margin-bottom: clamp(35px, 5.5vw, 92px);
+  }
+
+  &__benefit-list {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+
+    @media (max-width: 553.98px) {
+      flex-direction: column;
+    }
+  }
+
+  &__benefit-item {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 335px;
+
+    @media (max-width: 553.98px) {
+      flex-direction: row;
+      max-height: 200px;
+      column-gap: 20px;
+    }
+
+    @media (max-width: 420.98px) {
+      max-height: 180px;
+      column-gap: 10px;
+    }
+  }
+
+  &__benefit-photo {
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    margin-bottom: clamp(15px, 3vw, 25px);
+
+    @media (max-width: 553.98px) {
+      width: 50%;
+      min-width: 150px;
+    }
+  }
+
+  &__benefit-text {
+    @extend %poppinsMedium25;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 553.98px) {
+      width: 50%;
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: clamp(60px, 5vw, 120px);
+
+  &__img {
+    max-width: 1728px;
+    min-height: 450px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__text {
+    @extend %poppinsMedium35;
+    max-width: 728px;
+    min-width: 320px;
+    padding-inline: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    z-index: 2;
+    color: white;
+  }
+}
+
+.swiper-button-prev {
+  content: url("../../assets/images/arrow-circle-left.svg");
+  width: clamp(40px, 5vw, 60px);
+  height: clamp(40px, 5vw, 60px);
+  color: inherit !important;
+  background-color: inherit;
+
+  margin-left: 20px;
+  @media (max-width: 460.98px) {
+    display: none;
+  }
+}
+
+.swiper-button-next {
+  content: url("../../assets/images/arrow-circle-right.svg");
+  color: inherit !important;
+  width: clamp(40px, 5vw, 60px);
+  height: clamp(40px, 5vw, 60px);
+  background-color: inherit;
+  margin-right: 20px;
+  @media (max-width: 460.98px) {
+    display: none;
+  }
+}
+
+@media (min-width: 553px) {
+  .home {
+    &__loyalty-programme-section {
+      height: 826px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 45px;
+      padding-left: 20px;
+    }
+
+    &__loyalty-empty-div {
+      width: 70%;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__loyalty-programme-content {
+      margin-right: 30px;
+      width: 30%;
+    }
+
+    &__text {
+      margin-top: 45px;
+      margin-bottom: 40px;
+    }
+
+    &__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+
+  .button--login,
+  .button--signup {
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 0px 35px;
+    width: 140px;
+    height: 35px;
+    background: #fff;
+  }
+}
+
+@media (max-width: 552px) {
+  .home {
+    &__loyalty-programme-section {
+      position: relative;
+      height: 450px;
+      background-image: url("../../assets/images/Loyalty_programm.png");
+      background-size: cover;
+      background-position: center;
+      margin-top: 45px;
+    }
+
+    &__loyalty-empty-div{
+      display: none;
+    }
+
+    &__loyalty-programme-content {
+      position: absolute;
+      z-index: 2;
+      margin-right: 20px;
+      max-width: 300px;
+      left: 5%;
+      top: 35%;
+    }
+
+    &__text {
+      margin-top: 45px;
+      margin-bottom: 40px;
+    }
+
+    &__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+
+  .button--login,
+  .button--signup {
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 0px 15px;
+    width: 90px;
+    height: 27px;
+    background: #fff;
+  }
+}

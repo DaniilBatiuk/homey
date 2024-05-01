@@ -1,0 +1,109 @@
+@import "../../../../assets/styles/variables.scss";
+
+.photo {
+  &__content {
+    max-width: 638px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+    height: 70vh;
+
+    &::-webkit-scrollbar {
+      display: block;
+      width: 0px;
+      overflow: auto;
+      height: 0px;
+      background-color: rgb(207, 207, 207);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(167, 167, 167);
+      border-radius: 30px;
+    }
+
+    & > .renting__title {
+      text-align: start;
+    }
+
+    & > .renting__subtitle {
+      margin-bottom: clamp(30px, 6vw, 60px);
+    }
+  }
+
+  &__add {
+    background-color: #d9d9d9;
+    width: 100%;
+    border-radius: 10px;
+    height: clamp(300px, 30vw, 491px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: clamp(40px, 3vw, 60px);
+
+    & > button {
+      border: 2px solid #222;
+      border-radius: 20px;
+      padding: 10px 35px;
+      width: 172px;
+      height: 50px;
+
+      &:hover {
+        background-color: #cac5c5;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1fr);
+    grid-gap: clamp(15px, 2vw, 30px);
+    @media (max-width: 700.98px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    max-height: 250px;
+    height: clamp(300px, 20vw, 250px);
+    cursor: pointer;
+    position: relative;
+
+    & > .delete {
+      position: absolute;
+      top: clamp(15px, 2.5vw, 20px);
+      right: clamp(15px, 2.5vw, 20px);
+    }
+
+    &-plus {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      row-gap: 10px;
+      border: 2px dashed #000;
+    }
+
+    &.full-width {
+      grid-column: span 2;
+      max-height: 400px;
+      height: clamp(300px, 28vw, 400px);
+
+      @media (max-width: 700.98px) {
+        grid-column: span 1;
+        max-height: 250px;
+      }
+    }
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

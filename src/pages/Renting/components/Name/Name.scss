@@ -1,0 +1,15 @@
+@import "../../../../assets/styles/variables.scss";
+
+.name {
+  &__content {
+    max-width: 975px;
+    width: 100%;
+
+    & > .renting__title {
+      text-align: start;
+    }
+    & > .MuiFormControl-root {
+      margin-top: 30px;
+    }
+  }
+}

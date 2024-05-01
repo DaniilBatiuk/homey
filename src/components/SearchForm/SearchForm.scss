@@ -1,0 +1,269 @@
+@import "../../assets/styles/variables.scss";
+
+.swiperSlideActive {
+  background-color: #e4e4e4;
+
+  &:has(> .search__item input) {
+    & .search__item input {
+      background-color: #e4e4e4;
+    }
+  }
+}
+
+.search {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #333;
+  border-radius: 40px;
+  position: relative;
+
+  &__wrapper {
+    padding-inline: clamp(20px, 2.5vw, 30px);
+    position: absolute;
+    z-index: 2;
+    bottom: -6.5%;
+    max-width: 1405px;
+    width: 100%;
+  }
+
+  & .swiper {
+    flex: 1 1 93%;
+
+    & .swiper-wrapper .swiper-slide {
+      text-align: center;
+
+      padding: clamp(10px, 1.7vw, 25px) clamp(39px, 4vw, 65px);
+      padding-bottom: clamp(3px, 1.1vw, 18px);
+      overflow: hidden;
+
+      & > .search__item {
+        @media (max-width: 733.98px) {
+          width: 100%;
+          padding-left: 10px;
+        }
+      }
+
+      &-active {
+        border-top-left-radius: 40px;
+        border-bottom-left-radius: 40px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #e4e4e4;
+
+        &:has(> .search__item input) {
+          & .search__item input {
+            background-color: #e4e4e4;
+          }
+        }
+      }
+
+      & .search__item input {
+        &:focus {
+          outline: none;
+          border: none;
+        }
+      }
+    }
+
+    & .swiper-button-prev {
+      margin-left: 0px;
+      width: 30px;
+      height: 30px;
+      top: 60%;
+      @media (min-width: 899.98px) {
+        display: none;
+      }
+      @media (max-width: 899.98px) {
+        display: block !important;
+      }
+    }
+    & .swiper-button-next {
+      margin-right: 0px;
+      width: 30px;
+      height: 30px;
+      top: 60%;
+      @media (min-width: 899.98px) {
+        display: none;
+      }
+      @media (max-width: 899.98px) {
+        display: block !important;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+
+    row-gap: clamp(5px, 0.7vw, 10px);
+  }
+
+  &__item-name {
+    @extend %poppinsSemiBold18_21;
+    padding-bottom: 2px;
+    text-wrap: nowrap;
+    @include textAdaptive(1);
+    text-align: start;
+  }
+
+  &__item-sub {
+    color: #717171;
+    text-wrap: nowrap;
+    @include textAdaptive(1);
+    padding-bottom: 2px;
+    text-align: start;
+  }
+
+  &__icon {
+    background-color: #9A041F;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+    width: clamp(73px, 7.5vw, 115px);
+    padding-right: 5px;
+    & svg {
+      width: clamp(30px, 4vw, 61px);
+      height: clamp(30px, 4vw, 60px);
+    }
+  }
+
+  //Drop Down
+
+  &__dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 30px);
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    border: 2px solid #333;
+    border-radius: 20px;
+    transform: translateY(-50px);
+    opacity: 0;
+    pointer-events: none;
+
+    &__body-destination {
+      max-width: 500px;
+      padding-block: 15px;
+    }
+
+    &__destination-list {
+    }
+
+    &__destination-list-item {
+      padding: 10px 20px;
+      min-width: 330px;
+
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ebe8e8;
+      }
+
+      & span {
+        @include textAdaptive(1);
+        padding-top: 1px;
+      }
+
+      & svg {
+        min-width: 18px;
+      }
+    }
+
+    &__body-who {
+      padding: 10px 20px;
+      width: clamp(320px, 62vw, 440px);
+    }
+
+    &__guests-list {
+      &-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: clamp(75px, 10vw, 97px);
+        &:not(:last-child) {
+          border-bottom: 1px solid #a8a6a6;
+        }
+
+        &-text {
+          display: flex;
+          flex-direction: column;
+          row-gap: 10px;
+        }
+
+        &-title {
+          @extend %poppinsMedium25;
+        }
+
+        &-sub {
+          color: #5b5757;
+
+          &.underline {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &__body-date {
+      pointer-events: auto;
+      padding: 10px 10px;
+      width: fit-content;
+      background-color: white;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+      border: 2px solid #333;
+      border-radius: 20px;
+      & > .MuiDateRangeCalendar-root {
+        @media (max-width: 716.98px) {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          width: 312px;
+
+          & .MuiDateRangeCalendar-monthContainer {
+            border: none;
+          }
+        }
+
+        & > div:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__dropdown-menu.active {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__dropdown-menu.no-border {
+    border: none;
+  }
+
+  &__dropdown-menu.right {
+    right: 0;
+    left: auto;
+    display: flex;
+  }
+
+  &__dropdown-menu.center {
+    width: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    border: none;
+  }
+}

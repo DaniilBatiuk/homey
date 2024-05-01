@@ -1,0 +1,40 @@
+@import "../../../../assets/styles/variables.scss";
+
+.address {
+  &__content {
+    max-width: 525px;
+    width: 100%;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+    @media (max-width: 700.98px) {
+      height: 70vh;
+    }
+
+    &::-webkit-scrollbar {
+      display: block;
+      width: 0px;
+      overflow: auto;
+      height: 0px;
+      background-color: rgb(207, 207, 207);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(167, 167, 167);
+      border-radius: 30px;
+    }
+
+    & > .renting__title {
+      text-align: start;
+    }
+  }
+
+  &__list {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}

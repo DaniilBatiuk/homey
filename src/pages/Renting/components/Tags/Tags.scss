@@ -1,0 +1,66 @@
+@import "../../../../assets/styles/variables.scss";
+
+.tags {
+  &__content {
+    max-width: 819px;
+    width: 100%;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+    @media (max-width: 700.98px) {
+      height: 70vh;
+    }
+
+    &::-webkit-scrollbar {
+      display: block;
+      width: 0px;
+      overflow: auto;
+      height: 0px;
+      background-color: rgb(207, 207, 207);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(167, 167, 167);
+      border-radius: 30px;
+    }
+
+    & > .renting__title {
+      text-align: start;
+    }
+  }
+  &__list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: clamp(15px, 2vw, 30px);
+
+    @media (max-width: 700.98px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #333;
+      row-gap: 10px;
+      padding-block: 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      & > p {
+        text-align: center;
+      }
+      &:hover {
+        background-color: #ececec;
+      }
+
+      &.active {
+        background-color: #e0dede;
+      }
+    }
+  }
+}

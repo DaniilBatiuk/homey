@@ -1,0 +1,37 @@
+@import "../../../../assets/styles/variables.scss";
+
+.price {
+  &__content {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    & > .renting__title {
+      text-align: start;
+    }
+
+    & > .renting__subtitle {
+      margin-bottom: clamp(30px, 6vw, 60px);
+    }
+
+    & > .MuiFormControl-root {
+      width: 300px;
+      align-self: center;
+    }
+
+    & > p {
+      align-self: center;
+      text-decoration: underline;
+      color: #696969;
+      cursor: pointer;
+      margin-top: clamp(20px, 6vw, 30px);
+    }
+
+    & .MuiTypography-root,
+    & .MuiInputBase-input {
+      font-size: clamp(30px, 3.5vw, 40px);
+      font-weight: 600;
+    }
+  }
+}

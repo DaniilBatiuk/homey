@@ -1,0 +1,30 @@
+.confirm-email {
+  &__fields {
+    flex-direction: row !important;
+    justify-content: space-between;
+
+    & > .MuiFormControl-root > .MuiInputBase-root {
+      width: clamp(40px, 5vw, 60px);
+      height: clamp(40px, 5vw, 60px);
+
+      @media (max-width: 767.98px) {
+        width: clamp(40px, 8.2vw, 60px);
+        height: clamp(40px, 8.2vw, 60px);
+      }
+
+      & > input {
+        font-size: clamp(20px, 2.8vw, 30px);
+        font-weight: 700;
+
+        @media (max-width: 767.98px) {
+          font-size: clamp(20px, 5vw, 30px);
+        }
+      }
+    }
+  }
+  &__new-code {
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: clamp(10px, 3vw, 15px);
+  }
+}

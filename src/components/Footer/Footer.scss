@@ -1,0 +1,307 @@
+@import "../../assets/styles/variables.scss";
+
+.footer {
+  &__background-one {
+    background: #bdbdbd;
+    background-image: url("../../assets/images/Post.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__background-two {
+    position: relative;
+    background: #9A041F;
+  }
+
+  &__main {
+    box-sizing: border-box;
+    margin-top: 45px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    @extend %poppinsMedium60;
+
+    &:hover {
+      color: #fff;
+    }
+
+    .text{
+      margin-left: 20px;
+    }
+  }
+
+  &__categories {
+    color: #fff;
+    @extend %poppinsMedium20;
+  }
+
+  &__text-info {
+    color: #fff;
+    @extend %poppinsMedium15;
+  }
+
+  &__text-tel {
+    color: #fff;
+    @extend %poppinsMedium20;
+  }
+
+  &__newsletter {
+    width: 100%;
+    text-align: center;
+
+    p {
+      color: #1e1e1e;
+      @extend %poppinsMedium20;
+    }
+  }
+
+  &__newsletter-input-group {
+    input[type="email"] {
+      border: 1px solid #333;
+      @extend %poppinsMedium18_25;
+
+      // Placeholder styling, might need vendor prefixes for full compatibility
+      &::placeholder {
+        color: #333;
+        @extend %poppinsMedium18_25;
+      }
+    }
+
+    button {
+      background: #9A041F;
+      color: #fff;
+      @extend %poppinsMedium18_25;
+    }
+  }
+
+  &__accordion-sections,
+  &__newsletter_mobil,
+  &__newsletter-info-mobil {
+    display: none;
+  }
+
+  &__categories-li {
+    cursor: pointer;
+    color: #fff;
+    margin-bottom: 15px;
+    @extend %poppinsMedium18;
+  }
+
+  &__button-return {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+
+    .round-arrow-button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .round-arrow-button svg {
+      width: 38px;
+      height: 38px;
+    }
+  }
+}
+
+@media (min-width: 1161px) {
+  .footer {
+    &__main {
+      max-height: 790px;
+    }
+
+    &__newsletter {
+      padding: 50px 364px;
+      min-height: 247px;
+
+      p {
+        margin-bottom: 30px;
+        line-height: 140%;
+      }
+    }
+
+    &__newsletter-input-group {
+      display: flex;
+      justify-content: space-between;
+
+      input[type="email"] {
+        border-radius: 20px 0 0 20px;
+        padding: 0px 0px 0px 40px;
+        width: 780px;
+        height: 78px;
+
+        // Placeholder styling, might need vendor prefixes for full compatibility
+        &::placeholder {
+          line-height: 140%;
+        }
+      }
+
+      button {
+        transform: rotate(180deg);
+        border-radius: 20px 0 0 20px;
+        padding: 20px 47px;
+        width: 222px;
+
+        span {
+          display: block; // Make span behave like a block for the transformation
+          transform: rotate(-180deg); // Apply the opposite rotation
+        }
+      }
+    }
+
+    &__logo-div {
+      margin-bottom: 80px;
+    }
+
+    &__content-part-one {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 45px;
+      padding-right: 45px;
+      height: 388px;
+    }
+
+    &__content-section-one {
+      width: 274px;
+    }
+
+    &__content-section-two {
+      display: flex;
+      justify-content: space-between;
+      flex-basis: 963px;
+    }
+
+    &__text-tel {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      line-height: 140%;
+    }
+
+    &__categories {
+      line-height: 140%;
+      margin-bottom: 30px;
+    }
+
+    &__content_part_two_main {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__content-part-two {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 74px;
+      border-top: 2px solid #fff;
+      width: 1642px;
+    }
+  }
+}
+
+@media (max-width: 1160px) {
+  .footer {
+    &__main {
+      height: 780px;
+    }
+
+    &__logo-div {
+      margin-bottom: 40px;
+    }
+
+    &__newsletter {
+      padding: 30px 30px;
+      min-height: 296px;
+
+      p {
+        margin-bottom: 30px;
+        line-height: 140%;
+      }
+    }
+
+    &__newsletter-input-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      input[type="email"] {
+        border-radius: 20px;
+        padding: 0px 0px 0px 40px;
+        width: 90%;
+        height: 50px;
+
+        margin-bottom: 10px;
+
+        // Placeholder styling, might need vendor prefixes for full compatibility
+        &::placeholder {
+          line-height: 140%;
+        }
+      }
+
+      button {
+        border-radius: 20px;
+        width: 90%;
+        height: 50px;
+      }
+    }
+
+    &__content {
+      padding: 30px 20px 0;
+    }
+
+    &__logo-info-div {
+      display: none;
+    }
+
+    &__content-section-two {
+      display: none;
+    }
+
+    &__accordion-sections,
+    &__newsletter_mobil,
+    &__newsletter-info-mobil {
+      display: block;
+    }
+
+    &__accordion-title {
+      padding-bottom: 15px; // Adjust for your desired spacing
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      border-bottom: 1px solid #fff;
+
+      svg {
+        size: 24px;
+        color: #fff;
+      }
+    }
+
+    &__newsletter_mobil {
+      margin: 15px 0;
+
+      :first-child {
+        padding-bottom: 15px;
+      }
+    }
+
+    &__newsletter-info-mobil {
+      padding-bottom: 15px;
+    }
+
+    &__content_part_two_main {
+      border-top: 2px solid #fff;
+      padding: 20px 0;
+    }
+  }
+}

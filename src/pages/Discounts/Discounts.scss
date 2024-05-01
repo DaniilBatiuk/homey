@@ -1,0 +1,164 @@
+@import "../../assets/styles/variables.scss";
+
+.discounts{
+    &__loyalty-programme-discounts-section {
+        height: clamp(150px, 40vw, 300px);
+        background-image: url("../../assets/images/Bonuses.png");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+    }
+
+    &__info{
+        @extend %poppinsMedium16_25;
+        color: white;
+        padding: 10px 10px;
+        background-color: #FF7924;
+        border-radius: 20px;
+
+        @media(max-width: 1160px){ 
+            max-width: 263px;
+            text-align: center;
+        }
+    }
+	
+	&__text{
+        @extend %poppinsMedium16_25;
+        color: white;
+        padding: 10px 10px;
+        background-color: #FF7924;
+        border-radius: 20px;
+        position: absolute;
+        @media(min-width: 1161px){ 
+            top: 50px;
+            left: 50px;
+        }
+        @media(max-width: 1160px){ 
+            top: 25px;
+            left: 25px;
+        }
+    }
+
+    &__bonuses{
+        min-height: 114px;
+        width: 626px;
+
+        display: flex;
+        @media(max-width: 1160px){ 
+            margin-top: 30px;
+            flex-direction: column;
+            min-height: 167px;
+        }
+
+        @media(min-width: 1161px){ 
+            margin-top: 45px;
+            min-height: 114px;
+        }
+    }
+
+    &__bonuses-icon{
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__bonuses-icon-bon-mob{
+        display: flex;
+        align-items: center;
+
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    @media(min-width: 1161px){
+        &__bonuses-icon-com{
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        &__bonuses-icon-mob{
+            display: none;
+        }
+
+        &__bonuses-icon-bon-mob{
+            display: none;
+        }
+    }
+
+    @media(max-width: 1160px){
+        &__bonuses-icon-mob{
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        &__bonuses-icon-com{
+            display: none;
+        }
+
+        &__bonuses-icon{
+            display: none;
+        }
+    }
+
+    &__text-container{
+        display: flex;
+        align-items: center;
+    }
+
+    &__bonuses-text{
+        @extend %robotoRegular18;
+        line-height: 1.6;
+
+        @media(max-width: 1160px){ 
+            text-align: justify;
+        }
+    }
+
+    &__title{
+        text-align: center;
+
+        @media(max-width: 1160px){ 
+            padding: 30px;
+        }
+
+        @media(min-width: 1161px){ 
+            padding: 54px 60px;
+        }
+    }
+
+    &__text-title{
+        @extend %poppinsMedium18_25;
+    }
+
+    &__points-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .point{
+            display: flex;
+            flex-direction: row;
+            width: 511px;
+        }
+    }
+
+    &__info-container{
+        .title-info{
+            @extend %poppinsMedium16_20;
+            margin-bottom: 10px;
+        }
+
+        .text-info{
+            @extend %robotoRegular18;
+            line-height: 1.2;
+        }
+    }
+}

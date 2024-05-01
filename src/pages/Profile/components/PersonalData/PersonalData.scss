@@ -1,0 +1,178 @@
+@import "../../../../assets/styles/variables.scss";
+
+.personal {
+  position: relative;
+  margin-top: clamp(120px, 12vw, 193px);
+  padding-inline: clamp(20px, 2vw, 50px);
+  display: flex;
+  justify-content: space-between;
+  column-gap: clamp(20px, 4vw, 80px);
+
+  &.little {
+    padding-inline: 0px;
+  }
+
+  &__left {
+    width: clamp(240px, 18vw, 300px);
+
+    @media (max-width: 990px) {
+      width: 100%;
+    }
+
+    & > button {
+      @media (max-width: 990px) {
+        display: none;
+      }
+    }
+  }
+
+  &__card {
+    border: 1px solid rgba(151, 151, 151, 0.71);
+    border-radius: 10px;
+    padding: clamp(20px, 2vw, 36px) clamp(15px, 2vw, 22px);
+
+    background-color: white;
+    margin-bottom: 25px;
+    min-width: 220px;
+
+    @media (max-width: 990px) {
+      display: flex;
+    }
+
+    &-info-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (max-width: 990px) {
+        width: 50%;
+      }
+    }
+
+    &__avatar {
+      position: relative;
+      margin-bottom: clamp(10px, 2vw, 25px);
+
+      & > img {
+        border-radius: 90px;
+        width: clamp(68px, 10vw, 130px);
+        height: clamp(68px, 10vw, 130px);
+      }
+
+      & > span {
+        cursor: pointer;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0px;
+        right: -7px;
+        border: 4px solid white;
+        background-color: white;
+        border-radius: 30px;
+      }
+    }
+
+    &__name {
+      @extend %poppinsMedium16_18;
+      margin-bottom: clamp(8px, 2vw, 12px);
+    }
+
+    &__status {
+      color: rgba(105, 105, 105, 1);
+      margin-bottom: clamp(20px, 2vw, 30px);
+
+      @media (max-width: 990px) {
+        margin-bottom: 0px;
+      }
+    }
+
+    &__data {
+      width: 100%;
+      @media (max-width: 990px) {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      & > button {
+        display: none;
+
+        @media (max-width: 990px) {
+          display: block;
+          padding-block: clamp(3px, 1.5vw, 5px);
+        }
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+
+      &-item {
+        padding: 5px;
+        border-bottom: 1px solid rgba(151, 151, 151, 0.71);
+        &-text {
+          display: flex;
+          justify-content: space-between;
+
+          & span {
+            color: rgba(151, 151, 151, 0.71);
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    position: relative;
+    height: fit-content;
+    width: 70%;
+    border: 1px solid rgba(151, 151, 151, 0.71);
+    border-radius: 10px;
+    padding: clamp(25px, 2vw, 30px) clamp(20px, 3vw, 55px);
+    background-color: white;
+
+    @media (max-width: 990px) {
+      width: 100%;
+    }
+
+    &.little {
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      padding-bottom: 0px;
+    }
+
+    &-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-top: clamp(25px, 2vw, 30px);
+      padding-inline: clamp(20px, 3vw, 55px);
+      width: 100%;
+      display: flex;
+      column-gap: clamp(20px, 2.5vw, 40px);
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(151, 151, 151, 0.71);
+
+      &-item {
+        @extend %poppinsMedium16_18;
+        cursor: pointer;
+        text-wrap: nowrap;
+
+        &.active {
+          text-decoration: underline;
+          text-decoration-thickness: 3px;
+          text-underline-offset: 12px;
+        }
+      }
+    }
+
+    &-content {
+      padding-top: clamp(58px, 5vw, 70px);
+    }
+  }
+}

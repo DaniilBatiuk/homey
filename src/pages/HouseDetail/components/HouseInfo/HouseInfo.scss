@@ -1,0 +1,65 @@
+@import "../../../../assets/styles/variables.scss";
+
+.house-info {
+  margin-top: clamp(30px, 4vw, 70px);
+  display: flex;
+  gap: clamp(25px, 2.5vw, 30px);
+
+  @media (max-width: 690px) {
+    flex-direction: column;
+  }
+
+  &__list {
+    flex: 0 1 394px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 2.5vw, 25px);
+
+    @media (max-width: 690px) {
+      flex-direction: row;
+      flex: 1 1 auto;
+      min-width: 0px;
+
+      overflow-x: auto;
+
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        display: block;
+        width: 0px;
+        overflow: auto;
+        height: 0px;
+        background-color: rgb(207, 207, 207);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgb(167, 167, 167);
+        border-radius: 30px;
+      }
+    }
+
+    &-item {
+      border-bottom: 2px solid #717171;
+      padding: 10px 0px;
+      cursor: pointer;
+      @extend %poppinsMedium25;
+      font-size: clamp(18px, 2.2vw, 25px);
+      text-wrap: nowrap;
+
+      &.active {
+        border-bottom: 3px solid #222;
+      }
+    }
+  }
+
+  &__body {
+    flex: 0 1 1233px;
+
+    @media (max-width: 690px) {
+      flex: 1 1 auto;
+    }
+  }
+}

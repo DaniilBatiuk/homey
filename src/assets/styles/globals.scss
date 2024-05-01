@@ -1,0 +1,65 @@
+@import "./reset.scss";
+@import "./variables.scss";
+
+html {
+  scrollbar-gutter: stable;
+}
+body {
+  @extend %robotoRegular18;
+}
+
+body {
+  overflow-x: hidden;
+
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+    overflow: auto;
+    height: 5px;
+    background-color: rgb(207, 207, 207);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgb(167, 167, 167);
+    border-radius: 30px;
+  }
+}
+
+body:has(.modal.active) {
+  overflow-y: hidden !important;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+[class*="__container"] {
+  max-width: 1728px;
+  margin: 0px auto;
+  padding-inline: clamp(20px, 2.5vw, 30px);
+  overflow-wrap: break-word;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-data-yet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @extend %poppinsMedium25_50;
+  height: 20vh;
+}

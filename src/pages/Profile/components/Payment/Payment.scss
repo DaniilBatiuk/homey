@@ -1,0 +1,117 @@
+@import "../../../../assets/styles/variables.scss";
+
+.payment {
+  position: relative;
+  margin: 0 auto;
+  margin-top: clamp(120px, 12vw, 193px);
+  border: 1px solid rgba(151, 151, 151, 0.71);
+  border-radius: 10px;
+  background-color: white;
+  max-width: 1102px;
+
+  @media (max-width: 1496px) {
+    margin-inline: clamp(20px, 2vw, 50px);
+  }
+
+  &.little {
+    margin-inline: 0px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  &__title {
+    @extend %poppinsMedium16_18;
+    padding-top: clamp(25px, 2vw, 30px);
+    padding-inline: clamp(20px, 3vw, 55px);
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.71);
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    @media (max-width: 667px) {
+      flex-direction: column;
+    }
+
+    & > button {
+      background-color: #FF7924;
+      color: white;
+      text-decoration: underline;
+      padding-inline: 57px;
+      border-radius: 20px;
+      height: 50px;
+      width: 250px;
+      text-wrap: nowrap;
+      font-size: 18px;
+
+      @media (max-width: 990px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    padding-inline: clamp(20px, 3vw, 55px);
+    margin-top: 25px;
+    margin-bottom: clamp(35px, 3vw, 48px);
+  }
+
+  &__card {
+    display: flex;
+    column-gap: 50px;
+
+    @media (max-width: 410px) {
+      column-gap: 0px;
+      justify-content: space-between;
+    }
+
+    &-text {
+      text-wrap: nowrap;
+      @extend %poppinsMedium16_18;
+    }
+
+    &-list {
+      display: flex;
+      column-gap: 20px;
+
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-fields {
+      margin-top: clamp(15px, 2vw, 25px);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__field-card {
+    width: 350px;
+
+    @media (max-width: 1373px) {
+      width: 100%;
+    }
+  }
+
+  &__expiration {
+    width: 250px;
+    @media (max-width: 1373px) {
+      width: calc(100% - 50% - 10px);
+    }
+  }
+
+  &__cvv {
+    width: 250px;
+    @media (max-width: 1373px) {
+      width: calc(100% - 50% - 10px);
+    }
+  }
+}

@@ -1,0 +1,185 @@
+@import "../../../../assets/styles/variables.scss";
+
+.card{
+    &__loyalty {
+        padding: clamp(10px, 1.5vw, 20px) 15px;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    &__info{
+        .title{
+            @extend %poppinsMedium18_25;
+        }
+
+        .title-under{
+            @extend %poppinsMedium18_25;
+        }
+
+        .status{
+            @extend %robotoRegular18;
+        }
+
+        .description{
+            @extend %robotoRegular18;
+        }
+
+        .card-benefit-item-text{
+            @extend %robotoRegular18;
+        }
+    }
+
+    @media(min-width: 1451px){
+        &__loyalty{
+            height: 400px;
+            width: 80%;
+            padding: 0;
+            margin: 0;
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        &__image{
+            position: relative;
+            max-width: 680px;
+
+            img{
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__info{
+            width: 35%;
+            display:  flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .title{
+                text-align: center;
+                line-height: 1.8;
+            }
+
+            .title-under{
+                line-height: 1.8;
+            }
+
+            .status{
+                text-align: center;
+                padding-bottom: 30px;
+            }
+
+            .description{
+                margin-bottom: 20px;
+            }
+
+            .benefits{
+                margin-top: 20px;
+            }
+
+            .card-benefit-item>svg{
+                margin-right: 20px;
+            }
+
+            .card-benefit-item{
+                display: flex;
+                align-items: center;
+            }
+
+            .card-benefit-item:nth-child(2){
+                margin: 15px 0;
+            }
+        }
+    }
+
+    @media(max-width: 1450px){
+        &__loyalty{
+            max-height: 840px;
+            width: 100%;
+            padding: 30px 10px;
+            margin: 0;
+
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        &__image{
+            // position: relative;
+            width: 100%;
+            text-align: center;
+
+            img{
+                max-width: 90%;
+                background-size: cover;
+            }
+            margin-bottom: 20px;
+        }
+
+        &__info{
+            width: 100%;
+            z-index: 2;
+
+            .title{
+                text-align: center;
+                line-height: 1.8;
+            }
+
+            .title-under{
+                line-height: 1.8;
+            }
+
+            .status{
+                text-align: center;
+                padding-bottom: 30px;
+            }
+
+            .description{
+                margin-bottom: 20px;
+            }
+
+            .benefits{
+                margin-top: 20px;
+            }
+
+            .card-benefit-item>svg{
+                margin-right: 20px;
+                width: 20px;
+            }
+
+            .card-benefit-item{
+                display: flex;
+                align-items: center;
+            }
+
+            .card-benefit-item:nth-child(2){
+                margin: 15px 0;
+            }
+        }
+    }
+}
+
+@media(min-width: 1451px){
+    .card-lock-icon {
+        position: absolute; 
+        top: 22%; 
+        right: -15px;
+    }
+}
+
+@media(max-width: 1450px){
+    .card-lock-icon {
+        width: 92px;
+        position: absolute; 
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+}

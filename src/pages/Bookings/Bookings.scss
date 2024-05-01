@@ -1,0 +1,70 @@
+@import "../../assets/styles/variables.scss";
+
+.bookings {
+  &__loyalty-programme-discounts-section {
+    height: clamp(150px, 40vw, 300px);
+    background-image: url("../../assets/images/Bookings.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+  }
+
+  &__text {
+    @extend %poppinsMedium16_25;
+    color: white;
+    padding: 10px 10px;
+    background-color: #ff7924;
+    border-radius: 20px;
+    position: absolute;
+    @media (min-width: 1161px) {
+      top: 50px;
+      left: 50px;
+    }
+    @media (max-width: 1160px) {
+      top: 25px;
+      left: 25px;
+    }
+  }
+
+  &__icon-container {
+    @media (min-width: 1161px) {
+      margin: 45px 0;
+    }
+    @media (max-width: 1160px) {
+      margin: 30px 0;
+    }
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text-container {
+    display: flex;
+    justify-content: center;
+
+    .text-info {
+      width: 708px;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 1161px) {
+    &__icon-mob {
+      display: none;
+    }
+  }
+  @media (max-width: 1160px) {
+    &__icon {
+      display: none;
+    }
+  }
+
+  &__text-info {
+    @extend %robotoRegular18;
+    line-height: 1.6;
+    text-align: justify;
+  }
+}

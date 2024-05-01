@@ -1,0 +1,32 @@
+@import "../../assets/styles/variables.scss";
+
+.register {
+  flex-direction: row-reverse;
+
+  & .login__img-link {
+    left: 0;
+    right: auto;
+    flex-direction: row-reverse;
+
+    & svg {
+      rotate: 180deg;
+    }
+  }
+
+  & .login__text-half {
+    & > svg {
+      right: auto;
+      left: 20px;
+
+      @media (max-width: 767.98px) {
+        left: auto;
+        right: 20px;
+      }
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: flex-start;
+  }
+}

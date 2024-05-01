@@ -1,0 +1,206 @@
+@import "../../assets/styles/variables.scss";
+
+.house-detail {
+  &__header {
+    margin-top: clamp(30px, 2.5vw, 45px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+
+    & > svg {
+      width: clamp(20px, 2vw, 30px);
+      height: clamp(17px, 2vw, 25px);
+      cursor: pointer;
+    }
+  }
+
+  &__confirm-dash {
+    margin-top: clamp(30px, 2.5vw, 49px);
+    border: 2px dashed rgba(151, 151, 151, 0.71);
+    margin-inline: clamp(20px, 7vw, 145px);
+    padding: clamp(20px, 3vw, 44px) clamp(30px, 4.5vw, 66px);
+
+    // @media (max-width: 1307px) {
+    //   display: flex;
+    //   flex-direction: column-reverse;
+    // }
+
+    @media (max-width: 590px) {
+      padding: 0px;
+      border-width: 0px;
+      margin-inline: 0px;
+    }
+  }
+
+  &__left {
+    flex: 0 1 570px;
+    @media (max-width: 1307px) {
+      order: 2;
+    }
+  }
+
+  &__confirm-text {
+  }
+
+  &__text-little {
+    font-size: 15px;
+    margin-bottom: clamp(30px, 2.5vw, 50px);
+  }
+  &__confirm-fields {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
+  &__confirm-title {
+    @extend %poppinsMedium20;
+    text-align: center;
+    margin-bottom: clamp(25px, 2.5vw, 35px);
+  }
+  &__confirm-list {
+    width: clamp(320px, 35vw, 570px);
+
+    @media (max-width: 1307px) {
+      width: 100%;
+    }
+  }
+
+  &__header-confirm {
+    margin-top: clamp(30px, 2.5vw, 45px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: clamp(20px, 2.5vw, 40px);
+    & > svg {
+      height: clamp(20px, 2.5vw, 40px);
+      position: absolute;
+      left: 0;
+      top: 0;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    @extend %poppinsMedium20;
+    @include textAdaptive(1);
+    padding-bottom: 2px;
+  }
+
+  &__main {
+    margin-top: clamp(30px, 2.5vw, 38px);
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+
+    @media (max-width: 1307px) {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+
+    & .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    & .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    & .mySwiper2 {
+      height: 80%;
+      height: clamp(230px, 45vw, 600px);
+      margin-bottom: 10px;
+    }
+
+    & .mySwiper {
+      height: 20%;
+      box-sizing: border-box;
+      padding: clamp(15px, 1.8vw, 30px) 0;
+
+      & .swiper-slide {
+        width: 25%;
+        height: clamp(75px, 7vw, 100px);
+      }
+    }
+  }
+
+  &__images {
+    width: calc(100% - 500px - 30px);
+
+    @media (max-width: 1307px) {
+      width: 100%;
+    }
+  }
+  &__card {
+    min-width: 536px;
+  }
+
+  &__under-image {
+    margin-top: clamp(20px, 2.5vw, 30px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-title {
+      @extend %poppinsMedium20;
+      @include textAdaptive(1);
+    }
+    &-subtitle {
+      margin-top: clamp(10px, 2.5vw, 15px);
+    }
+    &-icon {
+      @extend %poppinsMedium18_20;
+      display: flex;
+      align-items: center;
+      column-gap: 4px;
+
+      & > svg {
+        width: clamp(22px, 2.5vw, 28px);
+        height: clamp(22px, 2.5vw, 28px);
+      }
+
+      & > span {
+        padding-top: 2px;
+        display: block;
+        height: fit-content;
+      }
+    }
+  }
+
+  &__personal-card {
+    max-width: 300px;
+
+    @media (max-width: 992px) {
+      max-width: 992px;
+    }
+  }
+
+  &__email {
+    margin-bottom: clamp(10px, 2.5vw, 20px) !important;
+    font-size: clamp(14px, 2.5vw, 16px);
+
+    @media (max-width: 450px) {
+      white-space: nowrap;
+      width: 100%;
+    }
+  }
+}
+.location {
+  width: 100%;
+  height: clamp(400px, 34vw, 600px);
+}
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}

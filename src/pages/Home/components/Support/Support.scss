@@ -1,0 +1,33 @@
+@import "../../../../assets/styles/variables.scss";
+
+.modal-support {
+  & svg {
+    cursor: pointer;
+    width: clamp(28px, 5vw, 55px);
+    height: clamp(28px, 5vw, 55px);
+  }
+
+  &__title {
+    @extend %poppinsMedium20;
+    margin-top: clamp(48px, 5vw, 70px);
+    text-align: center;
+  }
+
+  &__subtitle {
+    text-decoration: underline;
+    text-align: center;
+    margin-top: clamp(10px, 5vw, 15px);
+  }
+
+  &__text {
+    margin-top: clamp(20px, 5vw, 30px);
+  }
+
+  &__inputs {
+    margin-top: clamp(30px, 5vw, 40px);
+    margin-bottom: clamp(20px, 5vw, 30px);
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+}

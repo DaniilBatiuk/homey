@@ -1,0 +1,113 @@
+@import "../../assets/styles/variables.scss";
+
+.profile {
+  &__container {
+    @media (max-width: 990px) {
+      padding-inline: 0px !important;
+    }
+  }
+
+  &__main {
+    display: flex;
+    column-gap: clamp(15px, 2vw, 30px);
+
+    @media (max-width: 990px) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    min-width: 252px;
+    @media (max-width: 1215px) {
+      min-width: 202px;
+    }
+
+    @media (max-width: 990px) {
+      width: 100%;
+      order: 1;
+    }
+  }
+
+  &__list {
+    @media (max-width: 990px) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      padding-inline: clamp(20px, 2vw, 50px);
+    }
+
+    &-item {
+      @extend %poppinsMedium16_18;
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      padding: 15px 5px;
+      border-bottom: 1px solid rgba(151, 151, 151, 0.71);
+
+      @media (max-width: 990px) {
+        border: 1px solid rgba(51, 51, 51, 0.3);
+        box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.18);
+        border-radius: 20px;
+        padding: 11px 20px;
+      }
+
+      &.active {
+        background-color: rgba(213, 210, 210, 0.71);
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(236, 236, 236, 0.71);
+      }
+
+      &-icon {
+        border-radius: 30px;
+        background-color: rgba(151, 151, 151, 0.71);
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__right {
+    position: relative;
+
+    flex: 1 1 auto;
+
+    & > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: clamp(150px, 15vw, 250px);
+      object-fit: cover;
+    }
+
+    & > svg {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+    }
+
+    &-title {
+      @extend %poppinsMedium16_25;
+      position: absolute;
+      top: clamp(15px, 2vw, 42px);
+      left: clamp(20px, 2vw, 50px);
+      color: white;
+      background: #FF7924;
+      padding: 10px 10px;
+      border-radius: 20px;
+
+      @media (max-width: 990px) {
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

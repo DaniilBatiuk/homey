@@ -1,0 +1,159 @@
+@import "../../assets/styles/variables.scss";
+
+.login {
+  height: 100vh;
+  display: flex;
+  position: relative;
+
+  &__img-half {
+    width: 50%;
+    position: relative;
+
+    @media (max-width: 767.98px) {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__img-link {
+    @extend %poppinsMedium25;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color: #9A041F;
+    color: white;
+    column-gap: clamp(10px, 3vw, 20px);
+    padding: clamp(10px, 1.7vw, 21px);
+    cursor: pointer;
+    & > svg > path {
+      fill: white;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__img-link-phone {
+    display: none;
+  }
+
+  &__text-half {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 536px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 60px;
+    & button {
+      margin-top: clamp(25px, 3vw, 50px);
+      margin-bottom: clamp(25px, 3vw, 35px);
+    }
+
+    & > svg {
+      position: absolute;
+      top: clamp(15px, 2vw, 43px);
+      right: 20px;
+      cursor: pointer;
+      width: clamp(28px, 5vw, 55px);
+      height: clamp(28px, 5vw, 55px);
+
+      @media (max-width: 767.98px) {
+        left: 20px;
+        right: auto;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      max-width: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    & > .login__img-link-phone {
+      @media (max-width: 767.98px) {
+        display: flex;
+      }
+    }
+  }
+
+  &__title {
+    @extend %poppinsMedium25_50;
+    margin-bottom: clamp(25px, 3vw, 50px);
+    margin-top: 50px;
+  }
+
+  &__subtitle {
+    @extend %poppinsMedium18_35;
+    margin-bottom: clamp(10px, 3vw, 20px);
+  }
+
+  &__text {
+    margin-bottom: clamp(25px, 3vw, 50px);
+  }
+
+  &__fields-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: clamp(25px, 3vw, 30px);
+  }
+
+  &__list-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: clamp(15px, 3vw, 20px);
+    &-text {
+      @extend %robotoRegular15_20;
+      color: rgba(51, 51, 51, 1);
+
+      & > span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__or {
+    @extend %poppinsMedium20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &::before,
+    &::after {
+      content: "";
+      flex-grow: 1;
+      height: 1px;
+      background-color: rgba(151, 151, 151, 0.71);
+    }
+
+    &::before {
+      margin-right: 0.5em;
+    }
+
+    &::after {
+      margin-left: 0.5em;
+    }
+  }
+
+  &__icons-list {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    column-gap: clamp(20px, 3vw, 30px);
+    & svg {
+      cursor: pointer;
+      width: clamp(30px, 5vw, 50px);
+      height: clamp(30px, 5vw, 50px);
+    }
+  }
+}

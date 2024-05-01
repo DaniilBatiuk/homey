@@ -1,0 +1,19 @@
+@import "../../../../../../assets/styles/variables.scss";
+
+.basic {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1.5vw, 20px);
+
+  &__text-field {
+    width: 48%;
+    max-width: 380px;
+
+    @media (max-width: 1127px) {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
