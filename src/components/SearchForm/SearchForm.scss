@@ -1,11 +1,11 @@
 @import "../../assets/styles/variables.scss";
 
 .swiperSlideActive {
-  background-color: #e4e4e4;
+  background-color: #ffdbc5;
 
   &:has(> .search__item input) {
     & .search__item input {
-      background-color: #e4e4e4;
+      background-color: #ffdbc5;
     }
   }
 }
@@ -51,11 +51,11 @@
 
       &:hover {
         cursor: pointer;
-        background-color: #e4e4e4;
+        background-color: #ffdbc5;
 
         &:has(> .search__item input) {
           & .search__item input {
-            background-color: #e4e4e4;
+            background-color: #ffdbc5;
           }
         }
       }
@@ -66,6 +66,14 @@
           border: none;
         }
       }
+    }
+
+    & .swiper-button-prev {
+      content: url("../../assets/images/arrow-circle-left1.svg");
+    }
+
+    & .swiper-button-next {
+      content: url("../../assets/images/arrow-circle-right1.svg");
     }
 
     & .swiper-button-prev {
@@ -80,6 +88,7 @@
         display: block !important;
       }
     }
+
     & .swiper-button-next {
       margin-right: 0px;
       width: 30px;
@@ -120,9 +129,9 @@
   }
 
   &__icon {
-    background-color: #9A041F;
-    border-bottom-right-radius: 40px;
-    border-top-right-radius: 40px;
+    background-color: #9a041f;
+    border-bottom-right-radius: 37px;
+    border-top-right-radius: 37px;
     width: clamp(73px, 7.5vw, 115px);
     padding-right: 5px;
     & svg {
@@ -266,4 +275,24 @@
     box-shadow: none;
     border: none;
   }
+}
+
+.css-1x94ue7-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected {
+  background-color: #9a041f !important;
+}
+
+.css-1a4q4r2-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected {
+  background-color: #9a041f !important;
+}
+
+.css-1gbl7yn-MuiDateRangePickerDay-root {
+  background-color: rgba(51, 51, 51, 0.125) !important;
+}
+
+.css-1kex3oi-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected {
+  background-color: #9a041f !important;
+}
+
+.css-grqin-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected {
+  background-color: #9a041f !important;
 }

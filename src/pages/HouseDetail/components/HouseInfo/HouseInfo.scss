@@ -43,14 +43,16 @@
 
     &-item {
       border-bottom: 2px solid #717171;
-      padding: 10px 0px;
+      padding: 10px 5px;
+
       cursor: pointer;
       @extend %poppinsMedium25;
       font-size: clamp(18px, 2.2vw, 25px);
       text-wrap: nowrap;
 
       &.active {
-        border-bottom: 3px solid #222;
+        background: #ffdbc5;
+        border-bottom: 3px solid #ff7924;
       }
     }
   }

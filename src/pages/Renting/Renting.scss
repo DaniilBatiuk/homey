@@ -98,14 +98,13 @@
       flex-direction: column;
       row-gap: 10px;
       cursor: pointer;
+      transition: all ease 0.3s;
       &:hover {
-        // background-color: #ececec;
-        // padding: 5px;
+        transform: scale(0.9);
       }
 
       &.active {
-        padding: clamp(7px, 1.5vw, 15px);
-        //background-color: #e0dede;
+        transform: scale(0.9);
       }
 
       & > p {
@@ -147,7 +146,7 @@
       padding: 10px 35px;
       width: 165px;
       height: 50px;
-      background: #222;
+      background: #9a041f;
       color: white;
       @media (max-width: 520.98px) {
         width: 100%;

@@ -4,6 +4,8 @@ export * from "./Discounts/Discounts";
 export * from "./Home/Home";
 export * from "./HouseDetail/HouseDetail";
 export * from "./Loyalty/Loyalty";
+export * from "./MyHouses/MyHouses";
+export * from "./NotFound/NotFound";
 export * from "./Profile/Profile";
 export * from "./Renting/Renting";
 export * from "./Saved/Saved";

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { animated, useSpring } from "react-spring";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
@@ -115,22 +116,34 @@ const Loyalty: React.FC = () => {
         <section className="loyalty__section">
           <div className="loyalty__frequently">
             <div className="loyalty__frequentlies">
-              {accordionData.map(item => (
-                <div key={item.id} className="loyalty__frequently-div">
-                  <div
-                    className="loyalty__accordion-title"
-                    onClick={() => toggleAccordion(item.id)}
-                  >
-                    <p className="loyalty__question">{item.question}</p>
-                    {openAccordions[item.id] ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                  </div>
-                  {openAccordions[item.id] && (
-                    <div className="loyalty__accordion-content">
-                      <p className="text">{item.answer}</p>
+              {accordionData.map(item => {
+                // Move the useSpring hook inside the map function
+                const expand = useSpring({
+                  to: {
+                    height: openAccordions[item.id] ? "auto" : 0,
+                    opacity: openAccordions[item.id] ? 1 : 0,
+                  },
+                  from: { height: 0, opacity: 0 },
+                  config: { tension: 250, friction: 20 },
+                });
+
+                return (
+                  <div key={item.id} className="loyalty__frequently-div">
+                    <div
+                      className="loyalty__accordion-title"
+                      onClick={() => toggleAccordion(item.id)}
+                    >
+                      <p className="loyalty__question">{item.question}</p>
+                      {openAccordions[item.id] ? <IoIosArrowUp /> : <IoIosArrowDown />}
                     </div>
-                  )}
-                </div>
-              ))}
+                    {openAccordions[item.id] && (
+                      <animated.div style={expand} className="loyalty__accordion-content">
+                        <p className="text">{item.answer}</p>
+                      </animated.div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -138,5 +151,4 @@ const Loyalty: React.FC = () => {
     </div>
   );
 };
-
 export default Loyalty;

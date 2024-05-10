@@ -34,11 +34,9 @@ import { dropdownMenuClick2 } from "../Layout/helpers/dropdownMenuClick";
 export const Header: React.FC = () => {
   const [menuActive, setMenuActive] = useState<boolean>(false);
   const [menuItemActive, setMenuItemActive] = useState<number>(0);
-  const [rerender, setRerender] = useState<number>(0);
   const queryClient = useQueryClient();
   const location = useLocation();
   const navigate = useNavigate();
-  const queryParams = new URLSearchParams(location.search);
 
   const user = useContext(userContext);
 
@@ -79,7 +77,7 @@ export const Header: React.FC = () => {
                     ["active"]: location.pathname === LINKS.RENTING,
                   })}
                 >
-                  Renting a home
+                  Create a new listing
                 </Link>
               </div>
             )}
@@ -178,85 +176,61 @@ export const Header: React.FC = () => {
               </Link>
             </div>
           </div>
-          {/* <div tabIndex={3} className="header__item" data-dropdown>
-            <div className="header__text" data-dropdown-button>
-              EN
-            </div>
-            {ICONS.arrow({ "data-dropdown-button": true })}
-            <div className="dropdown-menu">
-              <ul className="dropdown-menu__list">
-                <li className="dropdown-menu__item">
-                  UA
-                  <img src={Rectangle} alt="flag" />
-                </li>
-                <li className="dropdown-menu__item">
-                  ES
-                  <img src={Rectangle} alt="flag" />
-                </li>
-                <li className="dropdown-menu__item">
-                  ZH
-                  <img src={Rectangle} alt="flag" />
-                </li>
-                <li className="dropdown-menu__item">
-                  AR
-                  <img src={Rectangle} alt="flag" />
-                </li>
-              </ul>
-            </div>
-          </div> */}
-          {/* <div tabIndex={4} className="header__item" data-dropdown>
-            <div className="header__text" data-dropdown-button>
-              USD
-            </div>
-            {ICONS.arrow({ "data-dropdown-button": true })}
-            <div className="dropdown-menu">
-              <ul className="dropdown-menu__list">
-                <li className="dropdown-menu__item">
-                  USD<span>$</span>
-                </li>
-                <li className="dropdown-menu__item">
-                  UAN<span>₴</span>
-                </li>
-                <li className="dropdown-menu__item">
-                  EUR<span>€</span>
-                </li>
-                <li className="dropdown-menu__item">
-                  CNY<span>¥</span>
-                </li>
-              </ul>
-            </div>
-          </div> */}
           {user ? (
             <div tabIndex={3} className="header__item" data-dropdown>
               <div className="header__text" data-dropdown-button>
-                {ICONS.account({ className: "svg-account", "data-dropdown-button": true })}
+                {ICONS.account({ className: "svg-account" })}
               </div>
               <div className="dropdown-menu left-auto-right-0">
                 <ul className="dropdown-menu__list">
-                  <Link to={LINKS.PROFILE} className="dropdown-menu__item">
+                  <Link
+                    to={LINKS.PROFILE}
+                    className="dropdown-menu__item"
+                    onClick={dropdownMenuClick2}
+                  >
                     {ICONS.accountManagement()}
                     Account management
                   </Link>
-                  <Link to={LINKS.LOYALTY} className="dropdown-menu__item">
+                  <Link
+                    to={LINKS.LOYALTY}
+                    className="dropdown-menu__item"
+                    onClick={dropdownMenuClick2}
+                  >
                     {ICONS.loyaltyProgramme()}
                     Loyalty programme
                   </Link>
-                  <Link to={LINKS.DISCOUNTS} className="dropdown-menu__item">
+                  <Link
+                    to={LINKS.DISCOUNTS}
+                    className="dropdown-menu__item"
+                    onClick={dropdownMenuClick2}
+                  >
                     {ICONS.discountsAndBonuses()}
                     Discounts and bonuses
                   </Link>
-                  <Link to={LINKS.BOOKINGS} className="dropdown-menu__item">
+                  <Link
+                    to={LINKS.BOOKINGS}
+                    className="dropdown-menu__item"
+                    onClick={dropdownMenuClick2}
+                  >
                     {ICONS.bookings()}
                     Bookings
                   </Link>
-                  <Link to={LINKS.SAVED} className="dropdown-menu__item">
+                  <Link
+                    to={LINKS.SAVED}
+                    className="dropdown-menu__item"
+                    onClick={dropdownMenuClick2}
+                  >
                     {ICONS.saved()}
                     Saved
                   </Link>
-                  {/* <li className="dropdown-menu__item">
-                    {ICONS.chat()}
-                    Chat
-                  </li> */}
+                  <Link
+                    to={LINKS.MYRENTS}
+                    className="dropdown-menu__item"
+                    onClick={dropdownMenuClick2}
+                  >
+                    {ICONS.myRents()}
+                    My listings
+                  </Link>
                   <li className="dropdown-menu__item" onClick={() => mutate()}>
                     {ICONS.signOut()}
                     Sign out
@@ -278,35 +252,45 @@ export const Header: React.FC = () => {
               <div className="section__item" onClick={() => setMenuItemActive(1)}>
                 {ICONS.categories()}Categories
               </div>
-              {/* <div className="section__item" onClick={() => setMenuItemActive(2)}>
-                <img src={Rectangle} alt="flag" />
-                English (UK)
-              </div>
-              <div className="section__item" onClick={() => setMenuItemActive(3)}>
-                <span>USD</span>
-                United States dollar
-              </div> */}
-              <div className="section__item">
-                <span>{ICONS.loyalty()}</span>
-                Loyalty programme
-              </div>
+              <Link to={LINKS.LOYALTY}>
+                <div className="section__item" onClick={() => setMenuActive(prev => !prev)}>
+                  <span>{ICONS.loyalty()}</span>
+                  Loyalty programme
+                </div>
+              </Link>
             </div>
           </div>
           <div className="section">
             <div className="section__title">Help and support</div>
             <div className="section__list">
-              <div className="section__item">{ICONS.contact()}Contact the сustomer service</div>
-              <div className="section__item">{ICONS.partnership()}Partnership dispute</div>
+              <Link to={LINKS.INPROGRESS} onClick={() => setMenuActive(prev => !prev)}>
+                <div className="section__item">{ICONS.contact()}Contact the сustomer service</div>
+              </Link>
+              <Link to={LINKS.INPROGRESS} onClick={() => setMenuActive(prev => !prev)}>
+                <div className="section__item">{ICONS.partnership()}Partnership dispute</div>
+              </Link>
             </div>
           </div>
           <div className="section">
             <div className="section__title">Settings and legal</div>
             <div className="section__list">
-              <div className="section__item">{ICONS.about()}About us</div>
-              <div className="section__item">{ICONS.partner()}Become a partner</div>
-              <div className="section__item">{ICONS.privacy()}Privacy and files cookie</div>
-              <div className="section__item">{ICONS.conditions()}Conditions of use</div>
-              <div className="section__item">{ICONS.legal()}Legal</div>
+              <Link to={LINKS.ABOUT}>
+                <div className="section__item" onClick={() => setMenuActive(prev => !prev)}>
+                  {ICONS.about()}About us
+                </div>
+              </Link>
+              <Link to={LINKS.INPROGRESS} onClick={() => setMenuActive(prev => !prev)}>
+                <div className="section__item">{ICONS.partner()}Become a partner</div>
+              </Link>
+              <Link to={LINKS.INPROGRESS} onClick={() => setMenuActive(prev => !prev)}>
+                <div className="section__item">{ICONS.privacy()}Privacy and files cookie</div>
+              </Link>
+              <Link to={LINKS.INPROGRESS} onClick={() => setMenuActive(prev => !prev)}>
+                <div className="section__item">{ICONS.conditions()}Conditions of use</div>
+              </Link>
+              <Link to={LINKS.INPROGRESS} onClick={() => setMenuActive(prev => !prev)}>
+                <div className="section__item">{ICONS.legal()}Legal</div>
+              </Link>
             </div>
           </div>
         </div>
@@ -325,7 +309,7 @@ export const Header: React.FC = () => {
             <div
               className="menu-item-open__list-item"
               onClick={() => {
-                navigate(`${LINKS.SEARCH}?category=Flats`, { replace: true });
+                navigate(`${LINKS.SEARCH}?category=Flat`, { replace: true });
                 menuOpen();
               }}
             >
@@ -334,7 +318,7 @@ export const Header: React.FC = () => {
             <div
               className="menu-item-open__list-item"
               onClick={() => {
-                navigate(`${LINKS.SEARCH}?category=Hotels`, { replace: true });
+                navigate(`${LINKS.SEARCH}?category=Hotel`, { replace: true });
                 menuOpen();
               }}
             >
@@ -343,7 +327,7 @@ export const Header: React.FC = () => {
             <div
               className="menu-item-open__list-item"
               onClick={() => {
-                navigate(`${LINKS.SEARCH}?category=Hostels`, { replace: true });
+                navigate(`${LINKS.SEARCH}?category=Hostel`, { replace: true });
                 menuOpen();
               }}
             >
@@ -352,7 +336,7 @@ export const Header: React.FC = () => {
             <div
               className="menu-item-open__list-item"
               onClick={() => {
-                navigate(`${LINKS.SEARCH}?category=Guesthouses`, { replace: true });
+                navigate(`${LINKS.SEARCH}?category=Guesthouse`, { replace: true });
                 menuOpen();
               }}
             >
@@ -369,108 +353,6 @@ export const Header: React.FC = () => {
             </div>
           </div>
         </div>
-        {/* <div className={menuItemActive === 2 ? "menu-item-open active" : "menu-item-open"}>
-          <div className="menu-item-open__title">Select your language</div>
-          <div className="menu-item-open__list">
-            <div className="menu-item-open__list-item">
-              <div className="menu-item-open__list-item-text">
-                <div>
-                  <img src={Rectangle} alt="flag" />
-                  EN
-                </div>
-                <span>English (United Kingdom)</span>
-              </div>
-              {ICONS.tick()}
-            </div>
-            <div className="menu-item-open__list-item">
-              <div className="menu-item-open__list-item-text">
-                <div>
-                  <img src={Rectangle} alt="flag" />
-                  UA
-                </div>
-                <span>Ukrainian</span>
-              </div>
-            </div>
-            <div className="menu-item-open__list-item">
-              <div className="menu-item-open__list-item-text">
-                <div>
-                  <img src={Rectangle} alt="flag" />
-                  ES
-                </div>
-                <span>Spanish</span>
-              </div>
-            </div>
-            <div className="menu-item-open__list-item">
-              <div className="menu-item-open__list-item-text">
-                <div>
-                  <img src={Rectangle} alt="flag" />
-                  ZH
-                </div>
-                <span>Chinese</span>
-              </div>
-            </div>
-            <div className="menu-item-open__list-item">
-              <div className="menu-item-open__list-item-text">
-                <div>
-                  <img src={Rectangle} alt="flag" />
-                  PT
-                </div>
-                <span>Portuguese</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={menuItemActive === 3 ? "menu-item-open active" : "menu-item-open"}>
-          <div className="menu-item-open__title">Select currency</div>
-          <div className="menu-item-open__list">
-            <div className="menu-item-open__list-item">
-              <div className="menu-item-open__list-item-text">
-                <div>
-                  <span>$</span>
-                  USD
-                </div>
-                <span>United States Dollar</span>
-              </div>
-              {ICONS.tick()}
-            </div>
-            <div className="menu-item-open__list-item">
-              <div className="menu-item-open__list-item-text">
-                <div>
-                  <span>₴</span>
-                  UAN
-                </div>
-                <span>Ukrainian Hryvnia</span>
-              </div>
-            </div>
-            <div className="menu-item-open__list-item">
-              <div className="menu-item-open__list-item-text">
-                <div>
-                  <span>€</span>
-                  EUR
-                </div>
-                <span>Euro</span>
-              </div>
-            </div>
-            <div className="menu-item-open__list-item">
-              <div className="menu-item-open__list-item-text">
-                <div>
-                  <span>¥</span>
-                  CNY
-                </div>
-                <span>ChiNese Yuan</span>
-              </div>
-            </div>
-            <div className="menu-item-open__list-item">
-              <div className="menu-item-open__list-item-text">
-                <div>
-                  <span>₱</span>
-                  ARS
-                </div>
-                <span>Argentine Peso</span>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </header>
   );

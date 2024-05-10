@@ -9,26 +9,15 @@ export const whereContext = createContext<string[]>([]);
 const extractCitiesAndCountries = (cards: ICard[]): string[] => {
   const cities: string[] = [];
   const countries: string[] = [];
+  const mergedLocations: string[] = [];
 
   cards.forEach(card => {
     const { city, country } = card.address;
-    if (city && !cities.includes(city)) {
-      cities.push(city);
-    }
-    if (country && !countries.includes(country)) {
-      countries.push(country);
-    }
-  });
 
-  const mergedLocations: string[] = [];
-  cities.forEach(city => {
-    countries.forEach(country => {
-      mergedLocations.push(`${country}, ${city}`);
-    });
+    mergedLocations.push(`${country}, ${city}`);
   });
 
   const uniqueLocations = [...new Set(mergedLocations)];
-
   return uniqueLocations;
 };
 

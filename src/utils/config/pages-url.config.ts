@@ -10,4 +10,6 @@ export const LINKS = {
   LOYALTY: "/Loyalty",
   SEARCH: "/Search",
   RENTING: "/Renting",
+  INPROGRESS: "/InProgress",
+  MYRENTS: "/MyRents",
 };

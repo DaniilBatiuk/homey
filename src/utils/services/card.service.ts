@@ -5,10 +5,16 @@ export const cardService = {
     const response = await axiosClassic.get<ICard[]>(
       `/Houses?address=${data.address}&from=${data.from}&to=${data.to}&adult=${data.adult}&childs=${data.childs}&infants=${data.infants}&pets=${data.pets}`,
     );
+    if (response.data) {
+      response.data = response.data.reverse();
+    }
     return response;
   },
   async getMainPageInfo() {
     const response = await axiosClassic.get<IMainPageCards>(`/Houses/GetMainPageInfo`);
+    if (response.data.theBest) {
+      response.data.theBest = response.data.theBest.reverse();
+    }
     return response;
   },
 
@@ -47,6 +53,11 @@ export const cardService = {
 
   async addInRent(data: IRent) {
     const response = await axiosWithAuth.post<ICreateHouse>("/Rents", data);
+    return response;
+  },
+
+  async deleteHouse(houseId: number) {
+    const response = await axiosWithAuth.delete<ICreateHouse>(`/Houses/${houseId}`);
     return response;
   },
 };

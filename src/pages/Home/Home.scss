@@ -218,6 +218,10 @@
     width: 140px;
     height: 35px;
     background: #fff;
+
+    &:hover {
+      background: #e9e8e8;
+    }
   }
 }
 
@@ -226,13 +230,13 @@
     &__loyalty-programme-section {
       position: relative;
       height: 450px;
-      background-image: url("../../assets/images/Loyalty_programm.png");
+      background-image: url("../../assets/images/Loyalty_programm_moby.png");
       background-size: cover;
       background-position: center;
       margin-top: 45px;
     }
 
-    &__loyalty-empty-div{
+    &__loyalty-empty-div {
       display: none;
     }
 

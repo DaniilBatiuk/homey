@@ -20,7 +20,7 @@ const Bookings: React.FC = () => {
       {user?.rents && !!user.rents.length ? (
         <div className="sms__container">
           <div className="filter__list-card">
-            {user.rents.map((card, index) => (
+            {user.rents.reverse().map((card, index) => (
               <Card key={index} card={card.house} />
             ))}
           </div>

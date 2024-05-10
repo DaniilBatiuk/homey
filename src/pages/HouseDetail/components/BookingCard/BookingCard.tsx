@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 import { ButtonConfirm, Counter } from "@/components";
 
@@ -14,6 +15,7 @@ import { calculateNightCount } from "./helpers/calculateNightCount";
 import { AssistanceAnimals } from "../../../../components/SearchForm/components/AssistanceAnimals/AssistanceAnimals";
 
 type BookingCardProp = {
+  user: IUser | null;
   house: IHouse;
   setConfirmActive: React.Dispatch<React.SetStateAction<boolean>>;
   confirmActive: boolean;
@@ -30,6 +32,7 @@ type BookingCardProp = {
 };
 
 export const BookingCard: React.FC<BookingCardProp> = ({
+  user,
   house,
   setConfirmActive,
   confirmActive,
@@ -107,7 +110,7 @@ export const BookingCard: React.FC<BookingCardProp> = ({
       )}
       <div className="booking-card__dates">
         <div
-          className="booking-card__date"
+          className={clsx("booking-card__date", { active: activeMenuIndex === 1})}
           onClick={() => setActiveMenuIndex(prev => (prev === 2 || prev === 1 ? null : 1))}
         >
           <div className="search__item">
@@ -118,7 +121,7 @@ export const BookingCard: React.FC<BookingCardProp> = ({
           </div>
         </div>
         <div
-          className="booking-card__date"
+          className={clsx("booking-card__date", { active: activeMenuIndex === 2})}
           onClick={() => setActiveMenuIndex(prev => (prev === 2 || prev === 1 ? null : 2))}
         >
           <div className="search__item">
@@ -130,7 +133,7 @@ export const BookingCard: React.FC<BookingCardProp> = ({
         </div>
       </div>
       <div
-        className="booking-card__who"
+        className={clsx("booking-card__who", { active: activeMenuIndex === 3 })}
         onClick={() => setActiveMenuIndex(prev => (prev === 3 ? null : 3))}
       >
         <div className="search__item">
@@ -142,7 +145,21 @@ export const BookingCard: React.FC<BookingCardProp> = ({
           </div>
         </div>
       </div>
-      {!confirmActive && <ButtonConfirm text="Booking" onClick={() => setConfirmActive(true)} />}
+      {!confirmActive && (
+        <ButtonConfirm
+          text="Booking"
+          onClick={() =>
+            user
+              ? user.rents.find(rent => rent.house.id === house.id)
+                ? toast.error("You have been already rented this house")
+                : user.houses.find(myHouse => myHouse.id === house.id)
+                  ? toast.error("You can not rent your own house")
+                  : setConfirmActive(true)
+              : toast.error("You have to login to booking")
+          }
+          style={{ background: "#9A041F" }}
+        />
+      )}
       <div className="booking-card__line"></div>
       <div className="booking-card__calculate">
         <div className="booking-card__calculate-item">

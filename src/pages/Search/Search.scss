@@ -30,8 +30,15 @@
     position: absolute;
     top: 50%;
     max-width: 1728px;
+    color: white;
 
     left: clamp(19px, 3vw, 30px);
+
+    text-shadow: 
+      -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px  1px 0 #000,
+      1px  1px 0 #000; // White text-shadow around the text
   }
 
   &__list {
@@ -69,22 +76,22 @@
       width: fit-content;
 
       &:hover {
-        background-color: rgba(228, 227, 227, 0.71);
+        background-color: rgba(69, 201, 206, 0.5);
       }
 
       &.active {
-        background-color: rgba(196, 195, 195, 0.71);
+        background-color: #45c9ce;
       }
 
       &-dark {
-        background-color: #333;
+        background-color: #9a041f;
         color: white;
         display: flex;
         align-items: center;
         column-gap: 10px;
 
         &:hover {
-          background-color: #636363;
+          background-color: #740318;
         }
       }
     }
@@ -131,11 +138,11 @@
       padding: 8px clamp(10px, 2.5vw, 30px);
       cursor: pointer;
       &:hover {
-        background-color: rgba(228, 227, 227, 0.71);
+        background-color: rgba(69, 201, 206, 0.5);
       }
 
       &.active {
-        background-color: rgba(196, 195, 195, 0.71);
+        background-color: #45c9ce;
       }
     }
   }
@@ -145,6 +152,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    & .css-1i4islt-MuiSlider-root {
+      color: #ff7924 !important;
+    }
   }
 
   &__prices {

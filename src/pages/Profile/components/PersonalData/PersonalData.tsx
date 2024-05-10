@@ -119,7 +119,7 @@ export const PersonalData: React.FC<PersonalDataProp> = ({
             </div>
           </div>
         </div>
-        <ButtonConfirm text="Save" type="submit" style={{background: "#FF7924"}}/>
+        <ButtonConfirm text="Save" type="submit" style={{ background: "#FF7924" }} />
       </div>
       <div
         className={clsx("personal__right", {

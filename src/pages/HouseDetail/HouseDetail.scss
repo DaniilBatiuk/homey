@@ -12,6 +12,10 @@
       width: clamp(20px, 2vw, 30px);
       height: clamp(17px, 2vw, 25px);
       cursor: pointer;
+
+      & > path {
+        fill: black;
+      }
     }
   }
 
@@ -192,7 +196,6 @@
 
     @media (max-width: 450px) {
       white-space: nowrap;
-      width: 100%;
     }
   }
 }

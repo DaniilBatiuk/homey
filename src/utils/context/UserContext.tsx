@@ -15,7 +15,7 @@ export const UserContext = ({ children }: { children: React.ReactNode }) => {
   } = useQuery({
     queryKey: ["user"],
     queryFn: () => userService.getUser(),
-    retry: 1,
+    retry: 0,
   });
 
   if (isFetching && !user) {

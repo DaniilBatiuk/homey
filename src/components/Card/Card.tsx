@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { ICONS } from "@/constants";
@@ -9,6 +9,8 @@ import { userContext } from "@/context";
 import { cardService } from "@/services";
 
 import Rectangle3 from "@/assets/images/Rectangle3.png";
+
+import { LINKS } from "@/config/pages-url.config";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
@@ -20,6 +22,8 @@ type CardProp = {
 export const Card: React.FC<CardProp> = ({ card }: CardProp) => {
   const queryClient = useQueryClient();
   const user = useContext(userContext);
+  const location = useLocation();
+
   const { mutate } = useMutation({
     mutationFn: () => cardService.addLikeHouse(card.id),
     onSuccess() {
@@ -50,8 +54,25 @@ export const Card: React.FC<CardProp> = ({ card }: CardProp) => {
     },
   });
 
+  const { mutate: deleteHouse } = useMutation({
+    mutationFn: () => cardService.deleteHouse(card.id),
+    onSuccess() {
+      toast.success("You have successfully deleted house");
+      queryClient.refetchQueries({
+        queryKey: ["user"],
+        type: "active",
+        exact: true,
+      });
+    },
+    onError() {
+      toast.error("Something went wrong!");
+    },
+  });
+
   return (
     <Link to={`/house/${card.id}`} className="card">
+      <div className="card__under-center"></div>
+      
       <img
         src={card.images.find(image => image.isMain === true)?.path ?? Rectangle3}
         alt="Card Photo"
@@ -63,18 +84,25 @@ export const Card: React.FC<CardProp> = ({ card }: CardProp) => {
           <div className="card__icons">
             {!!card.pets && ICONS.pets()} {!!card.babyCribs && ICONS.baby_bed()}
           </div>
-          {ICONS.like({
-            onClick: (e: React.MouseEvent<HTMLOrSVGElement, MouseEvent>) => {
-              e.preventDefault(),
-                user
-                  ? user?.favoriteHouses &&
-                    user.favoriteHouses.find(current => current.id === card.id)
-                    ? deleteFormFavorite()
-                    : mutate()
-                  : toast.error("You have to login to add in saved");
-            },
-            className: `${user?.favoriteHouses && user.favoriteHouses.find(current => current.id === card.id) && "icon-liked"}`,
-          })}
+          {location.pathname !== LINKS.MYRENTS
+            ? ICONS.like({
+                onClick: (e: React.MouseEvent<HTMLOrSVGElement, MouseEvent>) => {
+                  e.preventDefault(),
+                    user
+                      ? user?.favoriteHouses &&
+                        user.favoriteHouses.find(current => current.id === card.id)
+                        ? deleteFormFavorite()
+                        : mutate()
+                      : toast.error("You have to login to add in saved");
+                },
+                className: `${user?.favoriteHouses && user.favoriteHouses.find(current => current.id === card.id) && "icon-liked"}`,
+              })
+            : ICONS.garbage({
+                onClick: (e: React.MouseEvent<HTMLOrSVGElement, MouseEvent>) => {
+                  e.preventDefault();
+                  deleteHouse();
+                },
+              })}
         </div>
         <div className="card__center">
           <div className="card__name-price">
@@ -100,7 +128,7 @@ export const Card: React.FC<CardProp> = ({ card }: CardProp) => {
           })}
         </div>
         <div className="card__star">
-          {ICONS.star()} {!card.rating || card.rating === 0 ? "0.0" : card.rating}
+          {ICONS.star_main()} {!card.rating || card.rating === 0 ? "0.0" : card.rating}
         </div>
       </div>
     </Link>

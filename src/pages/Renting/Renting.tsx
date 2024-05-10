@@ -8,6 +8,8 @@ import { ICONS } from "@/constants";
 
 import { useMultistepForm, useRenting } from "@/hooks";
 
+import Logo from "@/assets/images/Logo_renting.png";
+
 import { LINKS } from "@/config/pages-url.config";
 
 import "./Renting.scss";
@@ -101,7 +103,10 @@ const Renting: React.FC = () => {
     <form onSubmit={handleSubmit(createHouse)} noValidate className="renting__container">
       <section className="renting__header">
         <Link to={LINKS.HOME} className="header__logo">
-          LOGO
+          <div>
+            <img src={Logo} alt="Group.png" />
+          </div>
+          <div className="text">Homey</div>
         </Link>
         {ICONS.menuClose({ onClick: () => navigate(LINKS.HOME) })}
       </section>
@@ -128,12 +133,14 @@ const Renting: React.FC = () => {
       <Modal active={activeModal} setActive={setActiveModal} maxDivWidth="400px">
         <div className="modal-support renting__modal">
           {ICONS.menuClose({ onClick: () => setActiveModal(false) })}
-          <div className="modal-support__title">Your advert has been sent for moderation!</div>
-          <div className="modal-support__subtitle">
-            Once it is approved by the moderator, other users will be able to see it.
-          </div>
+          <div className="modal-support__title">Your advert has created the listing!</div>
+          <div className="modal-support__subtitle">Now you can see in in your listings.</div>
         </div>
-        <ButtonConfirm text="Confirm" onClick={() => setActiveModal(false)} />
+        <ButtonConfirm
+          text="Confirm"
+          onClick={() => setActiveModal(false)}
+          style={{ background: "#9A041F" }}
+        />
       </Modal>
     </form>
   );

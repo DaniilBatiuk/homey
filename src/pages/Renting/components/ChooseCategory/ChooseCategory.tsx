@@ -1,6 +1,11 @@
 import clsx from "clsx";
 
-import Rectangle13 from "@/assets/images/Rectangle13.png";
+import Houses from "@/assets/images/Houses_renting.png";
+import Flats from "@/assets/images/Flats_renting.png";
+import Hotels from "@/assets/images/Hotels_renting.png";
+import Hostels from "@/assets/images/Hostels_renting.png";
+import Guesthouses from "@/assets/images/Guesthouses_renting.png";
+import Apartments from "@/assets/images/Apartment_renting.png";
 
 import "../../Renting.scss";
 
@@ -25,7 +30,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Houses",
           })}
         >
-          <img src={Rectangle13} alt="flag" />
+          <img src={Houses} alt="flag" />
           <p>Houses</p>
         </div>
         <div
@@ -36,7 +41,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Flat",
           })}
         >
-          <img src={Rectangle13} alt="flag" />
+          <img src={Flats} alt="flag" />
           <p>Flat</p>
         </div>
         <div
@@ -47,7 +52,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Hotel",
           })}
         >
-          <img src={Rectangle13} alt="flag" />
+          <img src={Hotels} alt="flag" />
           <p>Hotel</p>
         </div>
         <div
@@ -58,7 +63,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Hostel",
           })}
         >
-          <img src={Rectangle13} alt="flag" />
+          <img src={Hostels} alt="flag" />
           <p>Hostel</p>
         </div>
         <div
@@ -69,7 +74,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Guesthouse",
           })}
         >
-          <img src={Rectangle13} alt="flag" />
+          <img src={Guesthouses} alt="flag" />
           <p>Guesthouse</p>
         </div>
         <div
@@ -80,7 +85,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Aparthotel",
           })}
         >
-          <img src={Rectangle13} alt="flag" />
+          <img src={Apartments} alt="flag" />
           <p>Aparthotel</p>
         </div>
       </div>

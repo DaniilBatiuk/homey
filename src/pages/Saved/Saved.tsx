@@ -21,7 +21,7 @@ const Saved: React.FC = () => {
       {user?.favoriteHouses && !!user.favoriteHouses.length ? (
         <div className="sms__container">
           <div className="filter__list-card">
-            {user.favoriteHouses.map(card => (
+            {user.favoriteHouses.reverse().map(card => (
               <Card key={card.id} card={card} />
             ))}
           </div>

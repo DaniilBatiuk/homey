@@ -2,7 +2,9 @@ import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { MdArrowUpward } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
+import { animated, useSpring } from "react-spring";
 import { toast } from "react-toastify";
+
 import { ICONS } from "@/constants";
 
 import { LINKS } from "@/config/pages-url.config";
@@ -13,15 +15,9 @@ export const Footer: React.FC = () => {
   // State to manage which accordion item is open, -1 means all are closed
   const [openAccordion, setOpenAccordion] = useState<number>(-1);
   const navigate = useNavigate();
-  // Toggle function to open/close accordion items
+  //Toggle function to open/close accordion items
   const toggleAccordion = (index: number) => {
-    if (openAccordion === index) {
-      // If clicked again on the same item, close it
-      setOpenAccordion(-1);
-    } else {
-      // Open the clicked item
-      setOpenAccordion(index);
-    }
+    setOpenAccordion(prevIndex => (prevIndex === index ? -1 : index));
   };
 
   const scrollToTop = () => {
@@ -29,6 +25,45 @@ export const Footer: React.FC = () => {
       top: 0,
       behavior: "smooth",
     });
+  };
+
+  // Розрахунок анімації для кожного розділу
+  const animation = useSpring({
+    height: openAccordion !== -1 ? "150px" : "0px", // Припустимо, що контент має висоту 150px
+    opacity: openAccordion !== -1 ? 1 : 0,
+    overflow: "hidden",
+  });
+
+  const handleNavigation = (url: string) => {
+    navigate(url, { replace: true });
+    scrollToTop();
+  };
+
+  const accordionData = {
+    Categories: [
+      { name: "Houses", onClick: () => handleNavigation(`${LINKS.SEARCH}?category=Houses`) },
+      { name: "Flats", onClick: () => handleNavigation(`${LINKS.SEARCH}?category=Flat`) },
+      { name: "Hotels", onClick: () => handleNavigation(`${LINKS.SEARCH}?category=Hotel`) },
+      { name: "Hostels", onClick: () => handleNavigation(`${LINKS.SEARCH}?category=Hostel`) },
+    ],
+    Support: [
+      { name: "FAQ's", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+      { name: "Contact Us", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+      { name: "Return Policy", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+      { name: "My Account", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+    ],
+    Social: [
+      { name: "Facebook", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+      { name: "Instagram", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+      { name: "Pinterest", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+      { name: "YouTube", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+    ],
+    Legal: [
+      { name: "Privacy Policy", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+      { name: "Terms of Use", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+      { name: "Frequently Asked Questions", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+      { name: "Cancellation Policy", onClick: () => handleNavigation(LINKS.INPROGRESS) },
+    ],
   };
 
   return (
@@ -62,12 +97,8 @@ export const Footer: React.FC = () => {
               <div className="footer__content-section-one">
                 <div className="footer__logo-div">
                   <Link to={LINKS.HOME} className="footer__logo">
-                    <div>
-                      {ICONS.logoImage()}
-                    </div>
-                    <div className="text">
-                      Homey
-                    </div>
+                    <div>{ICONS.logoImage()}</div>
+                    <div className="text">Homey</div>
                   </Link>
                 </div>
                 <div className="footer__logo-info-div">
@@ -128,16 +159,16 @@ export const Footer: React.FC = () => {
                   <p className="footer__categories">Support</p>
                   <ul>
                     <li className="footer__categories-li">
-                      <a href="#">FAQ`s</a>
+                      <Link to={LINKS.INPROGRESS}>FAQ`s</Link>
                     </li>
                     <li className="footer__categories-li">
-                      <a href="#">Contact Us</a>
+                      <Link to={LINKS.INPROGRESS}>Contact Us</Link>
                     </li>
                     <li className="footer__categories-li">
-                      <a href="#">Return Policy</a>
+                      <Link to={LINKS.INPROGRESS}>Return Policy</Link>
                     </li>
                     <li className="footer__categories-li">
-                      <a href="#">My Account</a>
+                      <Link to={LINKS.INPROGRESS}>My Account</Link>
                     </li>
                   </ul>
                 </div>
@@ -145,16 +176,16 @@ export const Footer: React.FC = () => {
                   <p className="footer__categories">Social</p>
                   <ul>
                     <li className="footer__categories-li">
-                      <a href="#">Facebook</a>
+                      <Link to={LINKS.INPROGRESS}>Facebook</Link>
                     </li>
                     <li className="footer__categories-li">
-                      <a href="#">Instagram</a>
+                      <Link to={LINKS.INPROGRESS}>Instagram</Link>
                     </li>
                     <li className="footer__categories-li">
-                      <a href="#">Pinterest</a>
+                      <Link to={LINKS.INPROGRESS}>Pinterest</Link>
                     </li>
                     <li className="footer__categories-li">
-                      <a href="#">YouTube</a>
+                      <Link to={LINKS.INPROGRESS}>YouTube</Link>
                     </li>
                   </ul>
                 </div>
@@ -162,16 +193,16 @@ export const Footer: React.FC = () => {
                   <p className="footer__categories">Legal</p>
                   <ul>
                     <li className="footer__categories-li">
-                      <a href="#">Privacy Policy</a>
+                      <Link to={LINKS.INPROGRESS}>Privacy Policy</Link>
                     </li>
                     <li className="footer__categories-li">
-                      <a href="#">Terms of Use</a>
+                      <Link to={LINKS.INPROGRESS}>Terms of Use</Link>
                     </li>
                     <li className="footer__categories-li">
-                      <a href="#">Frequently Asked Questions</a>
+                      <Link to={LINKS.INPROGRESS}>Frequently Asked Questions</Link>
                     </li>
                     <li className="footer__categories-li">
-                      <a href="#">Cancellation Policy</a>
+                      <Link to={LINKS.INPROGRESS}>Cancellation Policy</Link>
                     </li>
                   </ul>
                 </div>
@@ -179,105 +210,32 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="footer__accordion-sections">
-              <div className="footer__accordion-item">
-                <div className="footer__accordion-title" onClick={() => toggleAccordion(1)}>
-                  <p className="footer__categories">Categories</p>
-                  {openAccordion === 1 ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                </div>
-                {openAccordion === 1 && (
-                  <div className="footer__accordion-content">
-                    <ul>
-                      <li className="footer__categories-li">
-                        <a href="#">Houses</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">Flats</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">Hotels</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">Hostels</a>
-                      </li>
-                    </ul>
+              {Object.entries(accordionData).map(([key, values], index) => (
+                <div key={key} className="footer__accordion-item">
+                  <div
+                    className="footer__accordion-title"
+                    onClick={() => toggleAccordion(index + 1)}
+                  >
+                    <p className="footer__categories">{key}</p>
+                    {openAccordion === index + 1 ? <IoIosArrowUp /> : <IoIosArrowDown />}
                   </div>
-                )}
-              </div>
-
-              <div className="footer__accordion-item">
-                <div className="footer__accordion-title" onClick={() => toggleAccordion(2)}>
-                  <p className="footer__categories">Support</p>
-                  {openAccordion === 2 ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  {openAccordion === index + 1 && (
+                    <animated.div style={animation} className="footer__accordion-content">
+                      <ul>
+                        {values.map(item => (
+                          <li
+                            key={item.name}
+                            className="footer__categories-li"
+                            onClick={item.onClick}
+                          >
+                            {item.name}
+                          </li>
+                        ))}
+                      </ul>
+                    </animated.div>
+                  )}
                 </div>
-                {openAccordion === 2 && (
-                  <div className="footer__accordion-content">
-                    <ul>
-                      <li className="footer__categories-li">
-                        <a href="#">FAQ`s</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">Contact Us</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">Return Policy</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">My Account</a>
-                      </li>
-                    </ul>
-                  </div>
-                )}
-              </div>
-
-              <div className="footer__accordion-item">
-                <div className="footer__accordion-title" onClick={() => toggleAccordion(3)}>
-                  <p className="footer__categories">Social</p>
-                  {openAccordion === 3 ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                </div>
-                {openAccordion === 3 && (
-                  <div className="footer__accordion-content">
-                    <ul>
-                      <li className="footer__categories-li">
-                        <a href="#">Facebook</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">Instagram</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">Pinterest</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">YouTube</a>
-                      </li>
-                    </ul>
-                  </div>
-                )}
-              </div>
-
-              <div className="footer__accordion-item">
-                <div className="footer__accordion-title" onClick={() => toggleAccordion(4)}>
-                  <p className="footer__categories">Legal</p>
-                  {openAccordion === 4 ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                </div>
-                {openAccordion === 4 && (
-                  <div className="footer__accordion-content">
-                    <ul>
-                      <li className="footer__categories-li">
-                        <a href="#">Privacy Policy</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">Terms of Use</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">Frequently Asked Questions</a>
-                      </li>
-                      <li className="footer__categories-li">
-                        <a href="#">Cancellation Policy</a>
-                      </li>
-                    </ul>
-                  </div>
-                )}
-              </div>
+              ))}
             </div>
 
             <div className="footer__newsletter_mobil">

@@ -175,4 +175,10 @@
       padding-top: clamp(58px, 5vw, 70px);
     }
   }
+
+  &__right{
+    .button-confirm{
+      background-color: #FF7924;
+    }
+  }
 }

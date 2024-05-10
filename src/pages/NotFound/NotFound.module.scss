@@ -1,0 +1,99 @@
+@import "../../assets/styles/variables.scss";
+
+.error {
+  &__container {
+    color: #4a4a4a; // Змінено на більш темний колір для читабельності
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px; // Відступ зменшено для кращого вирівнювання
+    text-align: center;
+  }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(100px, 10vw, 150px);
+    font-weight: 700;
+    color: $colorError;
+  }
+
+  &__subtitle {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(25px, 5vw, 35px);
+    color: $colorError;
+  }
+
+  &__subtitle_development {
+    margin-bottom: 40px;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(20px, 5vw, 25px);
+    color: $colorError;
+  }
+
+  @media(min-width: 1060px){
+    &__development_mob{
+      display: none !important;
+    }
+  }
+
+  @media(max-width: 1059px){
+    &__development{
+      display: none !important;
+    }
+  }
+
+  &__development{
+    display: flex;
+    padding-inline: 20px;
+  }
+
+  &__development_mob{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 20px;
+  }
+
+  &__image{
+    margin: 40px 0;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    justify-content: center;
+
+    @media(min-width: 500px){
+      max-width: 464px;
+    }
+
+    @media(max-width: 500px){
+      max-width: 320px;
+    }
+    
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: $colorError; 
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+}

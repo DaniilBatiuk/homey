@@ -5,7 +5,8 @@ import { Layout } from "@/components";
 
 import { CircularProgress } from "@mui/material";
 
-const Profile = React.lazy(() => import("./pages/Profile/Profile"));
+import { Profile } from "./pages";
+
 const SignUp = React.lazy(() => import("./pages/SignUp/SignUp"));
 const SignIn = React.lazy(() => import("./pages/SignIn/SignIn"));
 const Search = React.lazy(() => import("./pages/Search/Search"));
@@ -17,6 +18,8 @@ const Home = React.lazy(() => import("./pages/Home/Home"));
 const Discounts = React.lazy(() => import("./pages/Discounts/Discounts"));
 const Bookings = React.lazy(() => import("./pages/Bookings/Bookings"));
 const About = React.lazy(() => import("./pages/About/About"));
+const MyHouses = React.lazy(() => import("./pages/MyHouses/MyHouses"));
+const NotFound = React.lazy(() => import("./pages/NotFound/NotFound"));
 
 export function Routes() {
   return (
@@ -35,7 +38,10 @@ export function Routes() {
             <Route path="Loyalty" element={<Loyalty />} />
             <Route path="Search" element={<Search />} />
             <Route path="Renting" element={<Renting />} />
+            <Route path="MyRents" element={<MyHouses />} />
             <Route path="house/:id" element={<HouseDetail />} />
+            <Route path="/InProgress" element={<NotFound type="In progress" />} />
+            <Route path="/*" element={<NotFound type="Not found" />} />
           </Route>
         </ReactRoutes>
       </Suspense>

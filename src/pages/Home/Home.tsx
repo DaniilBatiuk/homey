@@ -33,16 +33,12 @@ import { breakPoints } from "./constants";
 const Home: React.FC = () => {
   const [activeModal, setActiveModal] = useState(false);
 
-  const {
-    data: cards,
-    isError,
-    isFetching,
-  } = useQuery({
+  const { data: cards, isFetching } = useQuery({
     queryKey: ["mainCards"],
     queryFn: () => cardService.getMainPageInfo(),
   });
 
-  if (isFetching) {
+  if (isFetching && !cards) {
     return (
       <div className="loader">
         <CircularProgress />

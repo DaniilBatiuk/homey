@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { MdArrowForward } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 import AboutCompany1 from "@/assets/images/About_company1.png";
 import AboutCompany2 from "@/assets/images/About_company2.png";
 import AboutCompany3 from "@/assets/images/About_company3.png";
 import Charity1 from "@/assets/images/Charity1.png";
 import Charity2 from "@/assets/images/Charity2.png";
+import { LINKS } from "@/config/pages-url.config";
 
 import "./About.scss";
 import { cardsData, menuItems, teamMembers } from "./constants";
@@ -28,6 +30,11 @@ const About: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate(LINKS.INPROGRESS); // Перенаправлення на потрібний маршрут
   };
 
   return (
@@ -409,7 +416,7 @@ const About: React.FC = () => {
                   </p>
                 </div>
                 <div>
-                  <button>
+                  <button onClick={handleButtonClick}>
                     <span>Donate</span>
                   </button>
                 </div>

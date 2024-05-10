@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+// @ts-ignore
+import { IResolveParams, LoginSocialFacebook } from "reactjs-social-login";
 import { SignUpFormType } from "src/utils/validators/sign-up-form-validator";
 
 import { SignInFormScheme, SignInFormType } from "@/validators";
@@ -9,7 +12,7 @@ import { ButtonConfirm, ConfirmEmail } from "@/components";
 
 import { ICONS } from "@/constants";
 
-import { authService } from "@/services";
+import { authService, saveTokensStorage } from "@/services";
 
 import SingIn from "@/assets/images/SingIn.png";
 
@@ -19,7 +22,8 @@ import { withAuth } from "@/HOC/withAuth";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TextField } from "@mui/material";
-import { useMutation } from "@tanstack/react-query";
+import { TokenResponse, useGoogleLogin } from "@react-oauth/google";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import "./SignIn.scss";
 
@@ -27,6 +31,7 @@ const SignIn: React.FC = withAuth(() => {
   const navigate = useNavigate();
   const [confirmEmailActive, setConfirmEmailActive] = useState<boolean>(false);
   const [tokens, setTokens] = useState<IAuthResponse | null>(null);
+  const queryClient = useQueryClient();
 
   const {
     register,
@@ -42,6 +47,50 @@ const SignIn: React.FC = withAuth(() => {
     onSuccess({ data }) {
       setTokens(data);
       setConfirmEmailActive(true);
+    },
+  });
+
+  const { mutate: googleLoginMutate } = useMutation({
+    mutationFn: (tokenResponse: Omit<TokenResponse, "error" | "error_description" | "error_uri">) =>
+      authService.loginGoogle({
+        ...tokenResponse,
+      }),
+    onSuccess({ data }) {
+      saveTokensStorage(data.accessToken, data.refreshToken);
+      queryClient.refetchQueries({
+        queryKey: ["user"],
+        type: "active",
+        exact: true,
+      });
+      navigate(LINKS.HOME);
+    },
+    onError() {
+      toast.error("Something went wrong!");
+    },
+  });
+
+  const googleLogin = useGoogleLogin({
+    onSuccess: tokenResponse => {
+      googleLoginMutate(tokenResponse);
+    },
+  });
+
+  const { mutate: facebookLoginMutate } = useMutation({
+    mutationFn: ({ data }: IResolveParams) =>
+      authService.loginFacebook({
+        data,
+      }),
+    onSuccess({ data }) {
+      saveTokensStorage(data.accessToken, data.refreshToken);
+      queryClient.refetchQueries({
+        queryKey: ["user"],
+        type: "active",
+        exact: true,
+      });
+      navigate(LINKS.HOME);
+    },
+    onError() {
+      toast.error("Something went wrong!");
     },
   });
 
@@ -95,9 +144,10 @@ const SignIn: React.FC = withAuth(() => {
           <ButtonConfirm text="Continue" type="submit" style={{ background: "#9A041F" }} />
           <div className="login__or">or</div>
           <div className="login__icons-list">
-            {ICONS.facebook()}
-            {ICONS.gmail()}
-            {ICONS.apple()}
+            <LoginSocialFacebook appId="1110022816922878" onResolve={facebookLoginMutate}>
+              {ICONS.facebook()}
+            </LoginSocialFacebook>
+            {ICONS.gmail({ onClick: googleLogin })}
           </div>
         </form>
       ) : (

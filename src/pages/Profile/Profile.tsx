@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useContext, useLayoutEffect, useState } from "react";
+import React, { useContext, useLayoutEffect, useState } from "react";
 
 import { ICONS } from "@/constants";
 
@@ -13,7 +13,7 @@ import { PersonalData } from "./components/PersonalData/PersonalData";
 import { Avatar } from "./components/PersonalData/components/Avatar/Avatar";
 import { Security } from "./components/Security/Security";
 
-const Profile: React.FC = () => {
+export const Profile: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<number>(0);
   const [activeMenuMobile, setActiveMenuMobile] = useState<boolean>(false);
   const [isLittleWidth, setIsLittleWidth] = useState<boolean>(false);
@@ -124,24 +124,20 @@ const Profile: React.FC = () => {
             ) : (
               <></>
             )}
-            {activeMenu === 0 && (
-              <PersonalData isLittleWidth={isLittleWidth} activeMenuMobile={activeMenuMobile} />
-            )}
 
-            {activeMenu === 1 && (
+            <div style={activeMenu === 0 ? { display: "block" } : { display: "none" }}>
+              <PersonalData isLittleWidth={isLittleWidth} activeMenuMobile={activeMenuMobile} />
+            </div>
+
+            <div style={activeMenu === 1 ? { display: "block" } : { display: "none" }}>
               <Security isLittleWidth={isLittleWidth} activeMenuMobile={activeMenuMobile} />
-            )}
-            {activeMenu === 2 && (
+            </div>
+            <div style={activeMenu === 2 ? { display: "block" } : { display: "none" }}>
               <Payment isLittleWidth={isLittleWidth} activeMenuMobile={activeMenuMobile} />
-            )}
-            {/* {activeMenu === 3 && (
-              <Preferences isLittleWidth={isLittleWidth} activeMenuMobile={activeMenuMobile} />
-            )} */}
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-export default Profile;

@@ -66,6 +66,11 @@ export const useRenting = ({
         type: "active",
         exact: true,
       });
+      queryClient.refetchQueries({
+        queryKey: ["user"],
+        type: "active",
+        exact: true,
+      });
     },
     onError() {
       toast.error("Something went wrong!");
@@ -88,7 +93,6 @@ export const useRenting = ({
       selectedPosition !== null ? selectedPosition[1].toString() : "3",
     );
 
-    // Додаємо решту полів
     formData.append("category", category);
     formData.append("accomodationType", accomodationType);
     formData.append("beds", String(beds));

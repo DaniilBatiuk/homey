@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -31,11 +31,23 @@ export const ConfirmEmail: React.FC<ConfirmEmailType> = ({ tokens }: ConfirmEmai
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ConfirmEmailFormType>({
     resolver: zodResolver(ConfirmEmailFormScheme),
     mode: "onSubmit",
   });
+
+  useEffect(() => {
+    reset({
+      number1: "1",
+      number2: "2",
+      number3: "3",
+      number4: "4",
+      number5: "5",
+      number6: "6",
+    });
+  }, []);
 
   const handleClick = (num: number) => {
     if (num !== 5 && textInputRefs?.current[num]?.value !== "") {
@@ -156,7 +168,7 @@ export const ConfirmEmail: React.FC<ConfirmEmailType> = ({ tokens }: ConfirmEmai
         />
       </div>
       <div className="confirm-email__new-code">Submit new code</div>
-      <ButtonConfirm text="Continue" type="submit" style={{background: "#9A041F"}}/>
+      <ButtonConfirm text="Continue" type="submit" style={{ background: "#9A041F" }} />
     </form>
   );
 };

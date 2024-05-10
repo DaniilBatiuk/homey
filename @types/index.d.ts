@@ -23,6 +23,7 @@ type IUser = {
   countOfComments: number;
   favoriteHouses: ICard[];
   rents: {house:ICard}[];
+  houses: ICard[];
 };
 
 type IPersonalData = Omit<

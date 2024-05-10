@@ -1,260 +1,272 @@
 @import "../../assets/styles/variables.scss";
 
-.loyalty{
-    &__questions{
-        max-width: 1728px;
-        margin: 0px auto;
-        overflow-wrap: break-word;
+.loyalty {
+  &__questions {
+    max-width: 1728px;
+    margin: 0px auto;
+    overflow-wrap: break-word;
+  }
+
+  &__loyalty-programme-discounts-section {
+    height: clamp(200px, 40vw, 300px);
+    background-image: url("../../assets/images/Loalty_main.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    margin-left: 30px;
+
+    .text-title {
+      @extend %poppinsMedium18_25;
+      margin-bottom: 20px;
+
+      color: white; // Ensure text color is dark for contrast if needed
+      text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; // White text-shadow around the text
     }
 
-    &__loyalty-programme-discounts-section{
-        height: clamp(200px, 40vw, 300px);
-        background-image: url("../../assets/images/Loalty_main.png");
-        background-size: cover;
-        background-position: center;
-        display: flex;
+    .text-info {
+      @extend %robotoRegular18;
+      color: white; // Ensure text color is dark for contrast if needed
+      text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; // White text-shadow around the text
+    }
+  }
+
+  &__text-info {
+    @media (min-width: 1161px) {
+      margin-top: 45px;
+    }
+
+    @media (max-width: 1160px) {
+      margin-top: 30px;
+    }
+
+    .text-welcome {
+      @extend %poppinsMedium16_18;
+      line-height: 1.6;
+      text-align: justify;
+    }
+  }
+
+  &__title {
+    @media (min-width: 1161px) {
+      padding: 45px 40px;
+    }
+
+    @media (max-width: 1160px) {
+      padding: 30px 40px 25px;
+    }
+    text-align: center;
+
+    .text-title {
+      @extend %poppinsMedium20;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__cards {
+    width: 100%;
+    @media (min-width: 1450px) {
+      height: 530px;
+    }
+
+    @media (max-width: 1160px) {
+      max-height: 840px;
+    }
+
+    border: 1px solid rgba(151, 151, 151, 0.71);
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+
+    .swiper .swiper-wrapper {
+      @media (max-width: 1450px) {
         align-items: center;
+      }
     }
 
-    &__text{
-        margin-left: 30px;
-
-        .text-title{
-            @extend %poppinsMedium18_25;
-            margin-bottom: 20px;
-        }
-
-        .text-info{
-            @extend %robotoRegular18;
-        }
+    .swiper .swiper-wrapper .swiper-slide {
+      display: flex;
+      @media (min-width: 1451px) {
+        padding: 0px 150px;
+      }
     }
 
-    &__text-info{
-        @media(min-width: 1161px){
-            margin-top: 45px;
-        }
+    & .swiper {
+      & .swiper-button-prev {
+        content: url("../../assets/images/arrow-circle-left1.svg");
+      }
 
-        @media(max-width: 1160px){
-            margin-top: 30px;
-        }
+      & .swiper-button-next {
+        content: url("../../assets/images/arrow-circle-right1.svg");
+      }
+    }
+  }
 
-        .text-welcome{
-            @extend %poppinsMedium16_18;
-            line-height: 1.6;
-            text-align: justify;
-        }
+  &__guidances {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__guidance {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image {
+    border-radius: 100px;
+    @media (min-width: 1161px) {
+      width: 80px;
+      height: 80px;
     }
 
-    &__title{
-        @media(min-width: 1161px){
-            padding: 45px 40px;
-        }
-
-        @media(max-width: 1160px){
-            padding: 30px 40px 25px;
-        }
-        text-align: center;
-
-        .text-title{
-            @extend %poppinsMedium20;
-        }
+    @media (max-width: 1160px) {
+      min-width: 50px;
+      min-height: 50px;
     }
 
-    &__card{
-        width: 100%;
-        display: flex;
-        justify-content: center;
+    background-color: #ff7924;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 20px;
+
+    .text {
+      color: #fff;
+      @extend %poppinsMedium20;
+    }
+  }
+
+  &__description {
+    max-width: 411px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .title {
+      @extend %poppinsMedium18_20;
+      margin-bottom: 10px;
     }
 
-    &__cards{
-        width: 100%;
-        @media(min-width: 1450px){
-            height: 530px;
-        }
+    .info {
+      @extend %robotoRegular18;
+    }
+  }
 
-        @media(max-width: 1160px){
-            max-height: 840px;
-        }
+  &__section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
-        border: 1px solid rgba(151, 151, 151, 0.71);
-        border-radius: 20px;
-
-        display: flex;
-        align-items: center;
-
-        .swiper .swiper-wrapper{
-            @media(max-width: 1450px){
-                align-items: center;
-            }
-        }
-
-        .swiper .swiper-wrapper .swiper-slide{
-            display: flex;
-            @media(min-width: 1451px){
-                padding: 0px 150px;
-            }
-        }
-
-        & .swiper{
-            & .swiper-button-prev{
-                content: url("../../assets/images/arrow-circle-left1.svg");
-            }
-
-            & .swiper-button-next{
-                content: url("../../assets/images/arrow-circle-right1.svg");
-            }
-        }
+  &__frequently {
+    border: 1px solid rgba(151, 151, 151, 0.71);
+    border-radius: 20px;
+    @media (min-width: 1161px) {
+      width: 95%;
+      max-height: 540px;
     }
 
-    &__guidances{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 30px;
+    @media (max-width: 1160px) {
+      width: 100%;
+      max-height: 620px;
+      padding: 0px 20px;
     }
 
-    &__guidance{
-        display: flex;
-        align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__frequentlies {
+    width: 95%;
+
+    @media (min-width: 1161px) {
+      width: 95%;
+      max-height: 465px;
+      margin: 50px 0px;
     }
 
-    &__image{
-        border-radius: 100px;
-        @media(min-width: 1161px){
-            width: 80px;
-            height: 80px;
-        }
-
-        @media(max-width: 1160px){
-            min-width: 50px;
-            min-height: 50px;
-        }
-
-        background-color: #FF7924;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        margin-right: 20px;
-
-        .text{
-            color: #fff;
-            @extend %poppinsMedium20;
-        }
+    @media (max-width: 1160px) {
+      width: 100%;
+      max-height: 557px;
+      margin: 20px 0px;
     }
 
-    &__description{
-        max-width: 411px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    overflow-y: auto;
+  }
 
-        .title{
-            @extend %poppinsMedium18_20;
-            margin-bottom: 10px;
-        }
+  &__frequently-div {
+    border-bottom: 1px solid rgba(151, 151, 151, 0.71);
+    margin-bottom: 15px;
+  }
 
-        .info{
-            @extend %robotoRegular18;
-        }
+  &__accordion-title {
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      @media (min-width: 1161px) {
+        min-width: 28px;
+        font-size: 28px;
+      }
+
+      @media (max-width: 1160px) {
+        min-width: 24px;
+        font-size: 24px;
+      }
+
+      color: #333;
     }
+  }
 
-    &__section{
-        width: 100%;
-        display: flex;
-        justify-content: center;
+  &__question {
+    @extend %poppinsMedium16_20;
+  }
+
+  &__accordion-content {
+    .text {
+      @extend %robotoRegular18;
+      margin-bottom: 10px;
+      line-height: 1.3;
     }
-
-    &__frequently{
-        border: 1px solid rgba(151, 151, 151, 0.71);
-        border-radius: 20px;
-        @media(min-width: 1161px){
-            width: 95%;
-            max-height: 540px;
-        }
-
-        @media(max-width: 1160px){
-            width: 100%;
-            max-height: 620px;
-            padding: 0px 20px
-        }
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &__frequentlies{
-        width: 95%;
-
-        @media(min-width: 1161px){
-            width: 95%;
-            max-height: 465px;
-            margin: 50px 0px;
-        }
-
-        @media(max-width: 1160px){
-            width: 100%;
-            max-height: 557px;
-            margin: 20px 0px;
-        }
-        
-        overflow-y: auto;
-    }
-
-    &__frequently-div{
-        border-bottom: 1px solid rgba(151, 151, 151, 0.71);
-        margin-bottom: 15px;
-    }
-
-    &__accordion-title {
-        padding-bottom: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-
-        svg{
-            @media(min-width: 1161px){
-                min-width: 28px;
-                font-size: 28px;
-            }
-    
-            @media(max-width: 1160px){
-                min-width: 24px;
-                font-size: 24px;
-            }
-            
-            color: #333;
-        }
-    }
-
-    &__question{
-        @extend %poppinsMedium16_20;
-    }
-
-    &__accordion-content{
-        .text{
-            @extend %robotoRegular18;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-    }
+  }
 }
 
 .swiper-button-next {
-    content: url("../../assets/images/arrow-circle-right.svg");
-    color: inherit !important;
-    width: clamp(40px, 5vw, 60px);
-    height: clamp(40px, 5vw, 60px);
-    background-color: inherit;
-    margin-right: 20px;
-    @media (max-width: 460.98px) {
-      display: none;
-    }
+  content: url("../../assets/images/arrow-circle-right.svg");
+  color: inherit !important;
+  width: clamp(40px, 5vw, 60px);
+  height: clamp(40px, 5vw, 60px);
+  background-color: inherit;
+  margin-right: 20px;
+  @media (max-width: 460.98px) {
+    display: none;
+  }
 }
-
 
 // .swiper-slide{
 //     display: flex;

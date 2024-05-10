@@ -5,5 +5,6 @@ export * from "./Footer/Footer";
 export * from "./Header/Header";
 export * from "./Layout/Layout";
 export * from "./SearchForm/SearchForm";
+export * from "./UI//ErrorButton/ErrorButton";
 export * from "./UI/ButtonConfirm/ButtonConfirm";
 export * from "./UI/Modal/Modal";

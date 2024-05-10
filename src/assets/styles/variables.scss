@@ -1,5 +1,9 @@
 @import "./fonts.scss";
 
+$colorError: #45C9CE;
+$colorRedOpacity: rgba(154, 4, 31, 0.2);
+$colorRedHover: rgba(154, 4, 31, 0.3);
+
 %robotoRegular18 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;

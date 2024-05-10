@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
 
-    .text{
+    .text {
       @extend %poppinsMedium25;
       font-size: clamp(30px, 3.5vw, 30px);
       margin-left: 30px;
@@ -18,7 +18,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    column-gap: 100px;
     position: relative;
 
     @media (max-width: 767.98px) {
@@ -40,8 +39,11 @@
 
     @media (max-width: 767.98px) {
       justify-content: flex-end;
-      & .header__item:nth-child(-n + 4) {
+      & .header__item:not([tabIndex="3"]) {
         display: none;
+      }
+      & .header__item[tabIndex="3"] {
+        margin-top: 3px;
       }
     }
   }
@@ -209,6 +211,8 @@
 .svg-account {
   width: clamp(24px, 4vw, 35px);
   height: clamp(24px, 4vw, 36px);
+  position: relative;
+  z-index: -1;
 }
 
 .svg-open {

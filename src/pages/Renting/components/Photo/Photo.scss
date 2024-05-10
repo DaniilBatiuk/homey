@@ -46,14 +46,14 @@
     row-gap: clamp(40px, 3vw, 60px);
 
     & > button {
-      border: 2px solid #222;
       border-radius: 20px;
       padding: 10px 35px;
       width: 172px;
       height: 50px;
+      background-color: #45C9CE;
 
       &:hover {
-        background-color: #cac5c5;
+        background-color: #3fb8bc;
       }
     }
   }
