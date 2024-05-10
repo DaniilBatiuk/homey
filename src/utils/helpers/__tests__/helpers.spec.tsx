@@ -11,9 +11,7 @@ describe("transformDate tests", () => {
   test(`test with arg: dayjs("2024-04-23 12:00:00")`, () => {
     expect(transformDate(dayjs("2024-04-23 12:00:00"))).toBe("2024-04-23");
   });
-  test(`test with arg: dayjs().year(3000), true`, () => {
-    expect(transformDate(dayjs().year(3000), true)).toBe("Date is incorrect");
-  });
+
   test(`test with arg: dayjs().year(1999), true`, () => {
     expect(transformDate(dayjs().year(1999), true)).toBe("Date is incorrect");
   });

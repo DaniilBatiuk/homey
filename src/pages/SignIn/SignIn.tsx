@@ -2,8 +2,6 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-// @ts-ignore
-import { IResolveParams, LoginSocialFacebook } from "reactjs-social-login";
 import { SignUpFormType } from "src/utils/validators/sign-up-form-validator";
 
 import { SignInFormScheme, SignInFormType } from "@/validators";
@@ -75,25 +73,6 @@ export const SignIn: React.FC = withAuth(() => {
     },
   });
 
-  const { mutate: facebookLoginMutate } = useMutation({
-    mutationFn: ({ data }: IResolveParams) =>
-      authService.loginFacebook({
-        data,
-      }),
-    onSuccess({ data }) {
-      saveTokensStorage(data.accessToken, data.refreshToken);
-      queryClient.refetchQueries({
-        queryKey: ["user"],
-        type: "active",
-        exact: true,
-      });
-      navigate(LINKS.HOME);
-    },
-    onError() {
-      toast.error("Something went wrong!");
-    },
-  });
-
   const SignInUser: SubmitHandler<SignInFormType> = async data => {
     mutate(data);
   };
@@ -141,12 +120,7 @@ export const SignIn: React.FC = withAuth(() => {
           </div>
           <ButtonConfirm text="Continue" type="submit" style={{ background: "#9A041F" }} />
           <div className="login__or">or</div>
-          <div className="login__icons-list">
-            <LoginSocialFacebook appId="1110022816922878" onResolve={facebookLoginMutate}>
-              {ICONS.facebook()}
-            </LoginSocialFacebook>
-            {ICONS.gmail({ onClick: googleLogin })}
-          </div>
+          <div className="login__icons-list">{ICONS.gmail({ onClick: googleLogin })}</div>
         </form>
       ) : (
         <ConfirmEmail tokens={tokens} />

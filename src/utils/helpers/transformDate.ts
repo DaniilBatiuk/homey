@@ -10,8 +10,7 @@ export const transformDate = (date: Dayjs | null, card?: boolean): string | null
   month = +month < 10 ? "0" + month : month;
   day = +day < 10 ? "0" + day : day;
 
-  if ((new Date(year, +month, +day) > new Date() || year < 2000) && card)
-    return "Date is incorrect";
+  if (year < 2000 && card) return "Date is incorrect";
 
   return `${year}-${month}-${day}`;
 };
