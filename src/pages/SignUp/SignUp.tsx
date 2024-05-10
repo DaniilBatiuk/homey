@@ -22,7 +22,7 @@ import { useMutation } from "@tanstack/react-query";
 
 import "./SignUp.scss";
 
-const SignUp: React.FC = withAuth(() => {
+export const SignUp: React.FC = withAuth(() => {
   const navigate = useNavigate();
   const [confirmEmailActive, setConfirmEmailActive] = useState<boolean>(false);
   const [tokens, setTokens] = useState<IAuthResponse | null>(null);
@@ -124,5 +124,3 @@ const SignUp: React.FC = withAuth(() => {
     </section>
   );
 });
-
-export default SignUp;

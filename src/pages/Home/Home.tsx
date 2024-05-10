@@ -30,7 +30,7 @@ import "./Home.scss";
 import { Support } from "./components/Support/Support";
 import { breakPoints } from "./constants";
 
-const Home: React.FC = () => {
+export const Home: React.FC = () => {
   const [activeModal, setActiveModal] = useState(false);
 
   const { data: cards, isFetching } = useQuery({
@@ -171,5 +171,3 @@ const Home: React.FC = () => {
     </div>
   );
 };
-
-export default Home;

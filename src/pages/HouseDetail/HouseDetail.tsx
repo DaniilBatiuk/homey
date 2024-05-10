@@ -23,7 +23,7 @@ import "./HouseDetail.scss";
 import { BookingCard } from "./components/BookingCard/BookingCard";
 import { HouseInfo } from "./components/HouseInfo/HouseInfo";
 
-const HouseDetail: React.FC = () => {
+export const HouseDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   const {
@@ -276,5 +276,3 @@ const HouseDetail: React.FC = () => {
     </div>
   );
 };
-
-export default HouseDetail;

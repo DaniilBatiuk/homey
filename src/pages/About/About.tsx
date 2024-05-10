@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { MdArrowForward } from "react-icons/md";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import AboutCompany1 from "@/assets/images/About_company1.png";
 import AboutCompany2 from "@/assets/images/About_company2.png";
 import AboutCompany3 from "@/assets/images/About_company3.png";
 import Charity1 from "@/assets/images/Charity1.png";
 import Charity2 from "@/assets/images/Charity2.png";
+
 import { LINKS } from "@/config/pages-url.config";
 
 import "./About.scss";
 import { cardsData, menuItems, teamMembers } from "./constants";
 
-const About: React.FC = () => {
+export const About: React.FC = () => {
   const [active, setActive] = useState(false);
   const [selectedItem, setSelectedItem] = useState("About the company");
 
@@ -428,5 +429,3 @@ const About: React.FC = () => {
     </div>
   );
 };
-
-export default About;

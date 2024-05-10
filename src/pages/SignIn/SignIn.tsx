@@ -27,7 +27,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import "./SignIn.scss";
 
-const SignIn: React.FC = withAuth(() => {
+export const SignIn: React.FC = withAuth(() => {
   const navigate = useNavigate();
   const [confirmEmailActive, setConfirmEmailActive] = useState<boolean>(false);
   const [tokens, setTokens] = useState<IAuthResponse | null>(null);
@@ -120,7 +120,6 @@ const SignIn: React.FC = withAuth(() => {
           </div>
           <div className="login__fields-list">
             <div className="login__list-item">
-              {/* <div className="login__list-item-text">Email</div> */}
               <TextField
                 {...register("email")}
                 error={Boolean(errors.email?.message)}
@@ -130,7 +129,6 @@ const SignIn: React.FC = withAuth(() => {
               />
             </div>
             <div className="login__list-item">
-              {/* <div className="login__list-item-text">Password</div> */}
               <TextField
                 {...register("password")}
                 error={Boolean(errors.password?.message)}
@@ -156,5 +154,3 @@ const SignIn: React.FC = withAuth(() => {
     </section>
   );
 });
-
-export default SignIn;

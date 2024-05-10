@@ -24,7 +24,7 @@ import { Photo } from "./components/Photo/Photo";
 import { Price } from "./components/Price/Price";
 import { Tags } from "./components/Tags/Tags";
 
-const Renting: React.FC = () => {
+export const Renting: React.FC = () => {
   const [category, setCategory] = useState<string>("");
   const [accomodationType, setAccomodationType] = useState("");
   const [beds, setBeds] = useState<number>(0);
@@ -145,5 +145,3 @@ const Renting: React.FC = () => {
     </form>
   );
 };
-
-export default Renting;
