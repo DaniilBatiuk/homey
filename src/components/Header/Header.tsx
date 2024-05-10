@@ -178,7 +178,7 @@ export const Header: React.FC = () => {
           </div>
           {user ? (
             <div tabIndex={3} className="header__item" data-dropdown>
-              <div className="header__text" data-dropdown-button>
+              <div className="header__text" style={{ paddingRight: "1px" }} data-dropdown-button>
                 {ICONS.account({ className: "svg-account" })}
               </div>
               <div className="dropdown-menu left-auto-right-0">
