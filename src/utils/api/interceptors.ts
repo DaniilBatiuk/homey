@@ -1,5 +1,4 @@
 import axios, { type CreateAxiosDefaults } from "axios";
-import { toast } from "react-toastify";
 
 import { authService } from "../services/auth.service";
 import { getAccessToken } from "../services/auth.token.service";
@@ -18,9 +17,6 @@ export const axiosWithAuth = axios.create(options);
 axiosClassic.interceptors.response.use(
   config => config,
   async error => {
-    toast.error(error.response.data.error);
-    toast.error(error.response.data.error.error);
-
     throw error;
   },
 );

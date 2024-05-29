@@ -15,11 +15,11 @@ export const getRefreshToken = () => {
 export const saveTokensStorage = (accessToken: string, refreshToken: string) => {
   Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
     sameSite: "strict",
-    expires: 1,
+    expires: 30,
   });
   Cookies.set(EnumTokens.REFRESH_TOKEN, refreshToken, {
     sameSite: "strict",
-    expires: 30,
+    expires: 60,
   });
 };
 
