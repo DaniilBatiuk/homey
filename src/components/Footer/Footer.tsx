@@ -11,7 +11,7 @@ import { LINKS } from "@/config/pages-url.config";
 
 import "./Footer.scss";
 
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
   // State to manage which accordion item is open, -1 means all are closed
   const [openAccordion, setOpenAccordion] = useState<number>(-1);
   const navigate = useNavigate();
@@ -265,3 +265,4 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+export default Footer;

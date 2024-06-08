@@ -10,7 +10,7 @@ import "./Loyalty.scss";
 import { Card } from "./components/CardLoyalty/Card";
 import { accordionData, cardData, guidances } from "./constants";
 
-export const Loyalty: React.FC = () => {
+const Loyalty: React.FC = () => {
   type OpenAccordionsType = {
     [key: number]: boolean;
   };
@@ -151,3 +151,5 @@ export const Loyalty: React.FC = () => {
     </div>
   );
 };
+
+export default Loyalty;

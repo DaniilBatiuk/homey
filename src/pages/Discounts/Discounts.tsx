@@ -2,7 +2,7 @@ import { ICONS } from "@/constants";
 
 import "./Discounts.scss";
 
-export const Discounts: React.FC = () => {
+const Discounts: React.FC = () => {
   return (
     <div className="discounts">
       <div className="discounts__container" style={{ paddingInline: "0px" }}>
@@ -70,3 +70,5 @@ export const Discounts: React.FC = () => {
     </div>
   );
 };
+
+export default Discounts;

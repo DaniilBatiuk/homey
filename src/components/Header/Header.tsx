@@ -31,7 +31,7 @@ import "./Header.scss";
 
 import { dropdownMenuClick2 } from "../Layout/helpers/dropdownMenuClick";
 
-export const Header: React.FC = () => {
+const Header: React.FC = () => {
   const [menuActive, setMenuActive] = useState<boolean>(false);
   const [menuItemActive, setMenuItemActive] = useState<number>(0);
   const queryClient = useQueryClient();
@@ -357,3 +357,5 @@ export const Header: React.FC = () => {
     </header>
   );
 };
+
+export default Header;

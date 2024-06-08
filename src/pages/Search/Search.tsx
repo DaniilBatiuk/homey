@@ -14,9 +14,7 @@ import Search_main from "@/assets/images/search_main.png";
 
 import { CircularProgress, Slider } from "@mui/material";
 
-import "./Search.scss";
-
-export const Search: React.FC = () => {
+const Search: React.FC = () => {
   const {
     setActiveCategory,
     activeCategory,
@@ -321,3 +319,5 @@ export const Search: React.FC = () => {
     </div>
   );
 };
+
+export default Search;
