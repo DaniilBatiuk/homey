@@ -8,7 +8,7 @@ import { userContext } from "@/context";
 
 import "./Bookings.scss";
 
-export const Bookings: React.FC = () => {
+const Bookings: React.FC = () => {
   const user = useContext(userContext);
   return (
     <div className="bookings">
@@ -50,3 +50,5 @@ export const Bookings: React.FC = () => {
     </div>
   );
 };
+
+export default Bookings;

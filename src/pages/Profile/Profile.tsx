@@ -13,7 +13,7 @@ import { PersonalData } from "./components/PersonalData/PersonalData";
 import { Avatar } from "./components/PersonalData/components/Avatar/Avatar";
 import { Security } from "./components/Security/Security";
 
-export const Profile: React.FC = () => {
+const Profile: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<number>(0);
   const [activeMenuMobile, setActiveMenuMobile] = useState<boolean>(false);
   const [isLittleWidth, setIsLittleWidth] = useState<boolean>(false);
@@ -141,3 +141,5 @@ export const Profile: React.FC = () => {
     </div>
   );
 };
+
+export default Profile;

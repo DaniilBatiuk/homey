@@ -9,7 +9,7 @@ type NotFoundProp = {
   type: "Not found" | "In progress";
 };
 
-export const NotFound: React.FC<NotFoundProp> = ({ type }: NotFoundProp) => {
+const NotFound: React.FC<NotFoundProp> = ({ type }: NotFoundProp) => {
   return (
     <section className={styles.error__container} style={{ paddingInline: "0px" }}>
       {type === "Not found" ? (
@@ -69,3 +69,5 @@ export const NotFound: React.FC<NotFoundProp> = ({ type }: NotFoundProp) => {
     </section>
   );
 };
+
+export default NotFound;

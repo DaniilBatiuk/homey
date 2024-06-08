@@ -14,7 +14,7 @@ import { LINKS } from "@/config/pages-url.config";
 import "./About.scss";
 import { cardsData, menuItems, teamMembers } from "./constants";
 
-export const About: React.FC = () => {
+const About: React.FC = () => {
   const [active, setActive] = useState(false);
   const [selectedItem, setSelectedItem] = useState("About the company");
 
@@ -429,3 +429,5 @@ export const About: React.FC = () => {
     </div>
   );
 };
+
+export default About;

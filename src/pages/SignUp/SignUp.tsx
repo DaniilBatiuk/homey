@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { SignUpFormScheme, SignUpFormType } from "@/validators";
 
@@ -22,7 +23,7 @@ import { useMutation } from "@tanstack/react-query";
 
 import "./SignUp.scss";
 
-export const SignUp: React.FC = withAuth(() => {
+const SignUp: React.FC = withAuth(() => {
   const navigate = useNavigate();
   const [confirmEmailActive, setConfirmEmailActive] = useState<boolean>(false);
   const [tokens, setTokens] = useState<IAuthResponse | null>(null);
@@ -40,6 +41,9 @@ export const SignUp: React.FC = withAuth(() => {
     onSuccess({ data }) {
       setTokens(data);
       setConfirmEmailActive(true);
+    },
+    onError() {
+      toast.error("This email is already exist!");
     },
   });
 
@@ -124,3 +128,5 @@ export const SignUp: React.FC = withAuth(() => {
     </section>
   );
 });
+
+export default SignUp;

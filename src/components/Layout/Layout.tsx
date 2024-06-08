@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,8 +15,13 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import { dropdownMenuClick } from "./helpers/dropdownMenuClick";
 
-import { Footer } from "../Footer/Footer";
-import { Header } from "../Header/Header";
+import "../../pages/Home/components/Support/Support.scss";
+import "../../pages/Profile/components/PersonalData/PersonalData.scss";
+import "../../pages/Search/Search.scss";
+import "../../pages/SignIn/SignIn.scss";
+
+const Header = React.lazy(() => import("../Header/Header"));
+const Footer = React.lazy(() => import("../Footer/Footer"));
 
 export const Layout: React.FC = () => {
   const location = useLocation();

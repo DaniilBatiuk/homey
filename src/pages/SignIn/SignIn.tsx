@@ -25,7 +25,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import "./SignIn.scss";
 
-export const SignIn: React.FC = withAuth(() => {
+const SignIn: React.FC = withAuth(() => {
   const navigate = useNavigate();
   const [confirmEmailActive, setConfirmEmailActive] = useState<boolean>(false);
   const [tokens, setTokens] = useState<IAuthResponse | null>(null);
@@ -45,6 +45,9 @@ export const SignIn: React.FC = withAuth(() => {
     onSuccess({ data }) {
       setTokens(data);
       setConfirmEmailActive(true);
+    },
+    onError() {
+      toast.error("Wrong Email or password!");
     },
   });
 
@@ -128,3 +131,5 @@ export const SignIn: React.FC = withAuth(() => {
     </section>
   );
 });
+
+export default SignIn;
