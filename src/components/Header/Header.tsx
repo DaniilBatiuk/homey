@@ -15,13 +15,13 @@ import { userContext } from "@/context";
 
 import { authService } from "@/services";
 
-import Apartments from "@/assets/images/Apartment_category.png";
-import Flats from "@/assets/images/Flats_category.png";
+import Apartments from "@/assets/images/Apartment_category.webp";
+import Flats from "@/assets/images/Flats_category.webp";
 import Logo from "@/assets/images/Group.png";
-import Guesthouses from "@/assets/images/Guesthouses_category.png";
-import Hostels from "@/assets/images/Hostels_category.png";
-import Hotels from "@/assets/images/Hotels_category.png";
-import Houses from "@/assets/images/Houses_category.png";
+import Guesthouses from "@/assets/images/Guesthouses_category.webp";
+import Hostels from "@/assets/images/Hostels_category.webp";
+import Hotels from "@/assets/images/Hotels_category.webp";
+import Houses from "@/assets/images/Houses_category.webp";
 
 import { LINKS } from "@/config/pages-url.config";
 
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
       <div className="header__container">
         <Link to={LINKS.HOME} className="header__logo">
           <div>
-            <img src={Logo} alt="Group.png" />
+            <img src={Logo} alt="Group" />
           </div>
           <div className="text">Homey</div>
         </Link>

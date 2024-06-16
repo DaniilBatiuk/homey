@@ -13,13 +13,13 @@ import { ICONS } from "@/constants";
 
 import { cardService } from "@/services";
 
-import Hallo1 from "@/assets/images/Hallo1.png";
-import Hallo2 from "@/assets/images/Hallo2.png";
-import Hallo3 from "@/assets/images/Hallo3.png";
-import Loalty_pro from "@/assets/images/Loyalty_programm.png";
-import Procent from "@/assets/images/Procent.png";
-import Sale from "@/assets/images/Sale.png";
-import Security from "@/assets/images/Security.png";
+import Hallo1 from "@/assets/images/Hallo1.webp";
+import Hallo2 from "@/assets/images/Hallo2.webp";
+import Hallo3 from "@/assets/images/Hallo3.webp";
+import Loalty_pro from "@/assets/images/Loyalty_programm.webp";
+import Procent from "@/assets/images/Procent.webp";
+import Sale from "@/assets/images/Sale.webp";
+import Security from "@/assets/images/Security.webp";
 
 import { LINKS } from "@/config/pages-url.config";
 

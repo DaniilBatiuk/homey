@@ -2,7 +2,7 @@ import { Modal } from "@/components";
 
 import { ICONS } from "@/constants";
 
-import Pets from "@/assets/images/Pets.png";
+import Pets from "@/assets/images/Pets.webp";
 
 import "./AssistanceAnimals.scss";
 

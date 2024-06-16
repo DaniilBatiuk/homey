@@ -3,11 +3,11 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { MdArrowForward } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
-import AboutCompany1 from "@/assets/images/About_company1.png";
-import AboutCompany2 from "@/assets/images/About_company2.png";
-import AboutCompany3 from "@/assets/images/About_company3.png";
-import Charity1 from "@/assets/images/Charity1.png";
-import Charity2 from "@/assets/images/Charity2.png";
+import AboutCompany1 from "@/assets/images/About_company1.webp";
+import AboutCompany2 from "@/assets/images/About_company2.webp";
+import AboutCompany3 from "@/assets/images/About_company3.webp";
+import Charity1 from "@/assets/images/Charity1.webp";
+import Charity2 from "@/assets/images/Charity2.webp";
 
 import { LINKS } from "@/config/pages-url.config";
 

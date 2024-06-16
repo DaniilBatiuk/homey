@@ -1,11 +1,11 @@
 import clsx from "clsx";
 
-import Apartments from "@/assets/images/Apartment_renting.png";
-import Flats from "@/assets/images/Flats_renting.png";
-import Guesthouses from "@/assets/images/Guesthouses_renting.png";
-import Hostels from "@/assets/images/Hostels_renting.png";
-import Hotels from "@/assets/images/Hotels_renting.png";
-import Houses from "@/assets/images/Houses_renting.png";
+import Apartments from "@/assets/images/Apartment_renting.webp";
+import Flats from "@/assets/images/Flats_renting.webp";
+import Guesthouses from "@/assets/images/Guesthouses_renting.webp";
+import Hostels from "@/assets/images/Hostels_renting.webp";
+import Hotels from "@/assets/images/Hotels_renting.webp";
+import Houses from "@/assets/images/Houses_renting.webp";
 
 import "../../Renting.scss";
 

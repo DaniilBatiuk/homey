@@ -76,7 +76,7 @@ export const Card: React.FC<CardProp> = ({ card }: CardProp) => {
       <img
         src={card.images.find(image => image.isMain === true)?.path ?? Rectangle3}
         alt="Card Photo"
-        className="card__img"
+        className="card__img background-gray"
         loading="lazy"
       />
 
