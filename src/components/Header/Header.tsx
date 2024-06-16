@@ -97,7 +97,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Houses} alt="flag" />
+                        <img src={Houses} alt="flag" loading="lazy" />
                         Houses
                       </li>
                     </SwiperSlide>
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Flats} alt="flag" />
+                        <img src={Flats} alt="flag" loading="lazy" />
                         Flats
                       </li>
                     </SwiperSlide>
@@ -121,7 +121,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Hotels} alt="flag" />
+                        <img src={Hotels} alt="flag" loading="lazy" />
                         Hotels
                       </li>
                     </SwiperSlide>
@@ -133,7 +133,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Hostels} alt="flag" />
+                        <img src={Hostels} alt="flag" loading="lazy" />
                         Hostels
                       </li>
                     </SwiperSlide>
@@ -145,7 +145,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Guesthouses} alt="flag" />
+                        <img src={Guesthouses} alt="flag" loading="lazy" />
                         Guesthouses
                       </li>
                     </SwiperSlide>
@@ -157,7 +157,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Apartments} alt="flag" />
+                        <img src={Apartments} alt="flag" loading="lazy" />
                         Aparthotel
                       </li>
                     </SwiperSlide>

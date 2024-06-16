@@ -136,13 +136,23 @@ const About: React.FC = () => {
                 </div>
               </div>
               <div className="about__company-card-foto">
-                <img src={AboutCompany1} alt="Main Photo" className="company-card-img" />
+                <img
+                  src={AboutCompany1}
+                  alt="Main Photo"
+                  className="company-card-img"
+                  loading="lazy"
+                />
               </div>
             </div>
 
             <div className="about__company">
               <div className="about__company-card-foto">
-                <img src={AboutCompany2} alt="Main Photo" className="company-card-img" />
+                <img
+                  src={AboutCompany2}
+                  alt="Main Photo"
+                  className="company-card-img"
+                  loading="lazy"
+                />
               </div>
               <div className="about__company-card">
                 <div className="card-text">
@@ -171,7 +181,12 @@ const About: React.FC = () => {
                 </div>
               </div>
               <div className="about__company-card-foto">
-                <img src={AboutCompany3} alt="Main Photo" className="company-card-img" />
+                <img
+                  src={AboutCompany3}
+                  alt="Main Photo"
+                  className="company-card-img"
+                  loading="lazy"
+                />
               </div>
             </div>
           </section>
@@ -199,7 +214,12 @@ const About: React.FC = () => {
                 </div>
               </div>
               <div className="about__company-card-foto-mob">
-                <img src={AboutCompany1} alt="Main Photo" className="company-card-img-mob" />
+                <img
+                  src={AboutCompany1}
+                  alt="Main Photo"
+                  className="company-card-img-mob"
+                  loading="lazy"
+                />
               </div>
             </div>
 
@@ -216,7 +236,12 @@ const About: React.FC = () => {
                 </div>
               </div>
               <div className="about__company-card-foto-mob">
-                <img src={AboutCompany2} alt="Main Photo" className="company-card-img-mob" />
+                <img
+                  src={AboutCompany2}
+                  alt="Main Photo"
+                  className="company-card-img-mob"
+                  loading="lazy"
+                />
               </div>
             </div>
 
@@ -234,7 +259,12 @@ const About: React.FC = () => {
                 </div>
               </div>
               <div className="about__company-card-foto-mob">
-                <img src={AboutCompany3} alt="Main Photo" className="company-card-img-mob" />
+                <img
+                  src={AboutCompany3}
+                  alt="Main Photo"
+                  className="company-card-img-mob"
+                  loading="lazy"
+                />
               </div>
             </div>
           </section>
@@ -260,7 +290,12 @@ const About: React.FC = () => {
                 {teamMembers.map(member => (
                   <div key={member.name} className="card__config">
                     <div className="team-member-card-img">
-                      <img src={member.imageUrl} alt={member.name} className="card_img" />
+                      <img
+                        src={member.imageUrl}
+                        alt={member.name}
+                        className="card_img"
+                        loading="lazy"
+                      />
                     </div>
                     <div className="card-context">
                       <div>
@@ -297,7 +332,12 @@ const About: React.FC = () => {
               {cardsData.map(card => (
                 <div key={card.id} className="card__config-info">
                   <div className="achievements-card-img">
-                    <img src={card.imageUrl} alt={card.title} className="card_img_info" />
+                    <img
+                      src={card.imageUrl}
+                      alt={card.title}
+                      className="card_img_info"
+                      loading="lazy"
+                    />
                   </div>
                   <div className="card-description-div">
                     <p className="card-description">{card.description}</p>
@@ -338,13 +378,23 @@ const About: React.FC = () => {
                   </div>
                 </div>
                 <div className="about__charity-card-foto">
-                  <img src={Charity1} alt="Main Photo" className="charity-card-img" />
+                  <img
+                    src={Charity1}
+                    alt="Main Photo"
+                    className="charity-card-img"
+                    loading="lazy"
+                  />
                 </div>
               </div>
 
               <div className="about__charity-container">
                 <div className="about__charity-card-foto">
-                  <img src={Charity2} alt="Main Photo" className="charity-card-img" />
+                  <img
+                    src={Charity2}
+                    alt="Main Photo"
+                    className="charity-card-img"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="about__charity-card">
                   <div className="card-text">
@@ -361,7 +411,12 @@ const About: React.FC = () => {
 
               <div className="about__charity-container-mob">
                 <div className="about__charity-card-foto-mob">
-                  <img src={Charity1} alt="Main Photo" className="charity-card-img-mob" />
+                  <img
+                    src={Charity1}
+                    alt="Main Photo"
+                    className="charity-card-img-mob"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="about__charity-card-mob">
                   <div className="card-text">
@@ -379,7 +434,12 @@ const About: React.FC = () => {
 
               <div className="about__charity-container-mob">
                 <div className="about__charity-card-foto-mob">
-                  <img src={Charity2} alt="Main Photo" className="charity-card-img-mob" />
+                  <img
+                    src={Charity2}
+                    alt="Main Photo"
+                    className="charity-card-img-mob"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="about__charity-card-mob">
                   <div className="card-text">

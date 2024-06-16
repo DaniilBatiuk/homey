@@ -33,7 +33,7 @@ const Search: React.FC = () => {
     <div className="filter">
       <div className="filter__header">
         <div className="filter__header-main">
-          <img src={Search_main} alt="Main Photo" className="filter__img" />
+          <img src={Search_main} alt="Main Photo" className="filter__img" loading="lazy" />
           <div className="filter__text">Find a place where you feel at home</div>
         </div>
         <SearchForm />

@@ -19,7 +19,7 @@ const NotFound: React.FC<NotFoundProp> = ({ type }: NotFoundProp) => {
             <h2 className={styles.error__subtitle}>Page not found</h2>
           </div>
           <div className={styles.error__image}>
-            <img src={Errorimage} alt="error.png" />
+            <img src={Errorimage} alt="error.png" loading="lazy" />
           </div>
           <div className={styles.error__body}>
             <p className={styles.error__text}>
@@ -45,13 +45,13 @@ const NotFound: React.FC<NotFoundProp> = ({ type }: NotFoundProp) => {
               </Link>
             </div>
             <div className={styles.error__image}>
-              <img src={DevImage} alt="dev.png" />
+              <img src={DevImage} alt="dev.png" loading="lazy" />
             </div>
           </div>
 
           <div className={styles.error__development_mob}>
             <div className={styles.error__image}>
-              <img src={DevImage} alt="dev.png" />
+              <img src={DevImage} alt="dev.png" loading="lazy" />
             </div>
             <div className={styles.error__body}>
               <h3 className={styles.error__subtitle_development}>The page in development"</h3>

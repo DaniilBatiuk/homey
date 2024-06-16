@@ -89,6 +89,7 @@ export const BookingCard: React.FC<BookingCardProp> = ({
                 src={house.images.find(image => image.isMain === true)?.path}
                 alt="Card Photo"
                 className="booking-card__image"
+                loading="lazy"
               />
             </div>
             <div className="booking-card__text">
@@ -110,7 +111,7 @@ export const BookingCard: React.FC<BookingCardProp> = ({
       )}
       <div className="booking-card__dates">
         <div
-          className={clsx("booking-card__date", { active: activeMenuIndex === 1})}
+          className={clsx("booking-card__date", { active: activeMenuIndex === 1 })}
           onClick={() => setActiveMenuIndex(prev => (prev === 2 || prev === 1 ? null : 1))}
         >
           <div className="search__item">
@@ -121,7 +122,7 @@ export const BookingCard: React.FC<BookingCardProp> = ({
           </div>
         </div>
         <div
-          className={clsx("booking-card__date", { active: activeMenuIndex === 2})}
+          className={clsx("booking-card__date", { active: activeMenuIndex === 2 })}
           onClick={() => setActiveMenuIndex(prev => (prev === 2 || prev === 1 ? null : 2))}
         >
           <div className="search__item">

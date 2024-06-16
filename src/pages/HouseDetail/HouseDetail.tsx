@@ -109,7 +109,7 @@ const HouseDetail: React.FC = () => {
               {house &&
                 house.images.map(image => (
                   <SwiperSlide key={image.id}>
-                    <img src={image.path} alt="Main Photo" className="main__img" />
+                    <img src={image.path} alt="Main Photo" className="main__img" loading="lazy" />
                   </SwiperSlide>
                 ))}
             </Swiper>
@@ -134,7 +134,7 @@ const HouseDetail: React.FC = () => {
               {house &&
                 house.images.map(image => (
                   <SwiperSlide key={image.id}>
-                    <img src={image.path} alt="Main Photo" className="main__img" />
+                    <img src={image.path} alt="Main Photo" className="main__img" loading="lazy" />
                   </SwiperSlide>
                 ))}
             </Swiper>

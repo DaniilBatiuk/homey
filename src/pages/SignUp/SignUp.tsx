@@ -55,7 +55,7 @@ const SignUp: React.FC = withAuth(() => {
   return (
     <section className="login register">
       <div className="login__img-half">
-        <img src={SingUp} alt="sing_up" className="login__img" />
+        <img src={SingUp} alt="sing_up" className="login__img" loading="lazy" />
         <Link to={LINKS.SIGNIN} className="login__img-link">
           Sign in{ICONS.cardArrow()}
         </Link>

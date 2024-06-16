@@ -1,11 +1,11 @@
 import clsx from "clsx";
 
-import Houses from "@/assets/images/Houses_renting.png";
-import Flats from "@/assets/images/Flats_renting.png";
-import Hotels from "@/assets/images/Hotels_renting.png";
-import Hostels from "@/assets/images/Hostels_renting.png";
-import Guesthouses from "@/assets/images/Guesthouses_renting.png";
 import Apartments from "@/assets/images/Apartment_renting.png";
+import Flats from "@/assets/images/Flats_renting.png";
+import Guesthouses from "@/assets/images/Guesthouses_renting.png";
+import Hostels from "@/assets/images/Hostels_renting.png";
+import Hotels from "@/assets/images/Hotels_renting.png";
+import Houses from "@/assets/images/Houses_renting.png";
 
 import "../../Renting.scss";
 
@@ -30,7 +30,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Houses",
           })}
         >
-          <img src={Houses} alt="flag" />
+          <img src={Houses} alt="flag" loading="lazy" />
           <p>Houses</p>
         </div>
         <div
@@ -41,7 +41,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Flat",
           })}
         >
-          <img src={Flats} alt="flag" />
+          <img src={Flats} alt="flag" loading="lazy" />
           <p>Flat</p>
         </div>
         <div
@@ -52,7 +52,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Hotel",
           })}
         >
-          <img src={Hotels} alt="flag" />
+          <img src={Hotels} alt="flag" loading="lazy" />
           <p>Hotel</p>
         </div>
         <div
@@ -63,7 +63,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Hostel",
           })}
         >
-          <img src={Hostels} alt="flag" />
+          <img src={Hostels} alt="flag" loading="lazy" />
           <p>Hostel</p>
         </div>
         <div
@@ -74,7 +74,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Guesthouse",
           })}
         >
-          <img src={Guesthouses} alt="flag" />
+          <img src={Guesthouses} alt="flag" loading="lazy" />
           <p>Guesthouse</p>
         </div>
         <div
@@ -85,7 +85,7 @@ export const ChooseCategory: React.FC<chooseCategoryProp> = ({
             ["active"]: category === "Aparthotel",
           })}
         >
-          <img src={Apartments} alt="flag" />
+          <img src={Apartments} alt="flag" loading="lazy" />
           <p>Aparthotel</p>
         </div>
       </div>
