@@ -3,14 +3,14 @@
 .footer {
   &__background-one {
     background: #bdbdbd;
-    background-image: url("../../assets/images/Post.png");
+    background-image: url("../../assets/images/Post.webp");
     background-size: cover;
     background-position: center;
   }
 
   &__background-two {
     position: relative;
-    background: #9A041F;
+    background: #9a041f;
   }
 
   &__main {
@@ -28,7 +28,7 @@
       color: #fff;
     }
 
-    .text{
+    .text {
       margin-left: 20px;
     }
   }
@@ -71,7 +71,7 @@
     }
 
     button {
-      background: #9A041F;
+      background: #9a041f;
       color: #fff;
       @extend %poppinsMedium18_25;
     }

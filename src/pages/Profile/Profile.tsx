@@ -5,7 +5,7 @@ import { ICONS } from "@/constants";
 
 import { userContext } from "@/context";
 
-import PersonalDataPhoto from "@/assets/images/PersonalData.png";
+import PersonalDataPhoto from "@/assets/images/PersonalData.webp";
 
 import "./Profile.scss";
 import { Payment } from "./components/Payment/Payment";

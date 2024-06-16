@@ -11,7 +11,7 @@ import { ICONS } from "@/constants";
 
 import { authService } from "@/services";
 
-import SingUp from "@/assets/images/SingUp.png";
+import SingUp from "@/assets/images/SingUp.webp";
 
 import { LINKS } from "@/config/pages-url.config";
 

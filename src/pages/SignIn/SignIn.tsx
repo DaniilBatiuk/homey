@@ -12,7 +12,7 @@ import { ICONS } from "@/constants";
 
 import { authService, saveTokensStorage } from "@/services";
 
-import SingIn from "@/assets/images/SingIn.png";
+import SingIn from "@/assets/images/SingIn.webp";
 
 import { LINKS } from "@/config/pages-url.config";
 
