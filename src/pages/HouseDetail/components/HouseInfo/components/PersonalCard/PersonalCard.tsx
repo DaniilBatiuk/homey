@@ -9,7 +9,11 @@ export const PersonalCard: React.FC<PersonalCardProp> = ({ house }: PersonalCard
     <div className="personal__card house-detail__personal-card">
       <div className="personal__card-info-main">
         <div className="personal__card__avatar">
-          <img src={house.user?.imagePath ? house.user.imagePath : Rectangle9} alt="avatar" />
+          <img
+            src={house.user?.imagePath ? house.user.imagePath : Rectangle9}
+            alt="avatar"
+            loading="lazy"
+          />
         </div>
         <div className="personal__card__name">
           {house.user.firstName || house.user.surname

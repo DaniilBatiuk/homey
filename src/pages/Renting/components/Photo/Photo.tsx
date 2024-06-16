@@ -70,7 +70,7 @@ export const Photo: React.FC<photoProp> = ({ photos, setPhotos }: photoProp) => 
                 ["full-width"]: index === 0,
               })}
             >
-              <img src={URL.createObjectURL(photo.file)} alt={`Photo ${index}`} />
+              <img src={URL.createObjectURL(photo.file)} alt={`Photo ${index}`} loading="lazy" />
               {ICONS.deleteImage({ className: "delete", onClick: () => handlerDelete(photo) })}
             </div>
           ))}

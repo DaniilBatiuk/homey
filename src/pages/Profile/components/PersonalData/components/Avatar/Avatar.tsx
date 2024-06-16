@@ -46,7 +46,7 @@ export const Avatar: React.FC = () => {
 
   return (
     <div className="personal__card__avatar">
-      <img src={user?.imagePath ? user.imagePath : Rectangle9} alt="avatar" />
+      <img src={user?.imagePath ? user.imagePath : Rectangle9} alt="avatar" loading="lazy" />
       <span
         onClick={() => {
           if (filePicker && filePicker.current) {

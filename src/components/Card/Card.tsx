@@ -72,11 +72,12 @@ export const Card: React.FC<CardProp> = ({ card }: CardProp) => {
   return (
     <Link to={`/house/${card.id}`} className="card">
       <div className="card__under-center"></div>
-      
+
       <img
         src={card.images.find(image => image.isMain === true)?.path ?? Rectangle3}
         alt="Card Photo"
         className="card__img"
+        loading="lazy"
       />
 
       <div className="card__main">

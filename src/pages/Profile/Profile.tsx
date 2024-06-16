@@ -69,7 +69,7 @@ const Profile: React.FC = () => {
             </div>
           </div>
           <div className="profile__right">
-            <img src={PersonalDataPhoto} alt="photo" />
+            <img src={PersonalDataPhoto} alt="photo" loading="lazy" />
             <div className="profile__right-title">
               {!activeMenuMobile && isLittleWidth
                 ? "Account management"

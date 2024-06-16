@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -38,6 +38,14 @@ const Home: React.FC = () => {
     queryFn: () => cardService.getMainPageInfo(),
   });
 
+  useEffect(() => {
+    const images = [Hallo1, Hallo2, Hallo3];
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   if (isFetching && !cards) {
     return (
       <div className="loader">
@@ -61,13 +69,13 @@ const Home: React.FC = () => {
             autoplay={{ delay: 5000 }}
           >
             <SwiperSlide>
-              <img src={Hallo1} alt="Photo 1" className="main__img" />
+              <img src={Hallo1} alt="Photo 1" className="main__img" loading="lazy" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={Hallo2} alt="Photo 2" className="main__img" />
+              <img src={Hallo2} alt="Photo 2" className="main__img" loading="lazy" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={Hallo3} alt="Photo 3" className="main__img" />
+              <img src={Hallo3} alt="Photo 3" className="main__img" loading="lazy" />
             </SwiperSlide>
           </Swiper>
           <SearchForm />
@@ -123,7 +131,7 @@ const Home: React.FC = () => {
           <div className="home__benefit-list">
             <div className="home__benefit-item">
               <div className="home__benefit-photo">
-                <img src={Sale} alt="sale" />
+                <img src={Sale} alt="sale" loading="lazy" />
               </div>
               <div className="home__benefit-text">
                 Large selection of accommodation around the world
@@ -131,13 +139,13 @@ const Home: React.FC = () => {
             </div>
             <div className="home__benefit-item">
               <div className="home__benefit-photo">
-                <img src={Procent} alt="procent" />
+                <img src={Procent} alt="procent" loading="lazy" />
               </div>
               <div className="home__benefit-text">Low prices and flexible rental terms</div>
             </div>
             <div className="home__benefit-item">
               <div className="home__benefit-photo">
-                <img src={Security} alt="security" />
+                <img src={Security} alt="security" loading="lazy" />
               </div>
               <div className="home__benefit-text">Security and confidentiality of transactions</div>
             </div>
@@ -148,7 +156,7 @@ const Home: React.FC = () => {
       <div className="home__container" style={{ paddingInline: "0px" }}>
         <section className="home__loyalty-programme-section">
           <div className="home__loyalty-empty-div">
-            <img src={Loalty_pro} alt="loyalty_pro" />
+            <img src={Loalty_pro} alt="loyalty_pro" loading="lazy" />
           </div>
           <div className="home__loyalty-programme-content">
             <div className="home__title">Loyalty programme</div>
