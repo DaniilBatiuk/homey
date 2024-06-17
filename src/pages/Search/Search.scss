@@ -28,17 +28,18 @@
   &__text {
     @extend %poppinsMedium35;
     position: absolute;
+    text-wrap: nowrap;
     top: 50%;
     max-width: 1728px;
     color: white;
 
     left: clamp(19px, 3vw, 30px);
 
-    text-shadow: 
-      -1px -1px 0 #000,  
+    text-shadow:
+      -1px -1px 0 #000,
       1px -1px 0 #000,
-      -1px  1px 0 #000,
-      1px  1px 0 #000; // White text-shadow around the text
+      -1px 1px 0 #000,
+      1px 1px 0 #000; // White text-shadow around the text
   }
 
   &__list {
