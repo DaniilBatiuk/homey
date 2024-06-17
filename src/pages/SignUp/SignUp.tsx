@@ -11,7 +11,7 @@ import { ICONS } from "@/constants";
 
 import { authService } from "@/services";
 
-import SingUp from "@/assets/images/SingUp.png";
+import SingUp from "@/assets/images/SingUp.webp";
 
 import { LINKS } from "@/config/pages-url.config";
 
@@ -55,7 +55,7 @@ const SignUp: React.FC = withAuth(() => {
   return (
     <section className="login register">
       <div className="login__img-half">
-        <img src={SingUp} alt="sing_up" className="login__img" />
+        <img src={SingUp} alt="sing_up" className="login__img" loading="lazy" />
         <Link to={LINKS.SIGNIN} className="login__img-link">
           Sign in{ICONS.cardArrow()}
         </Link>

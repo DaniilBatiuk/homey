@@ -15,13 +15,13 @@ import { userContext } from "@/context";
 
 import { authService } from "@/services";
 
-import Apartments from "@/assets/images/Apartment_category.png";
-import Flats from "@/assets/images/Flats_category.png";
+import Apartments from "@/assets/images/Apartment_category.webp";
+import Flats from "@/assets/images/Flats_category.webp";
 import Logo from "@/assets/images/Group.png";
-import Guesthouses from "@/assets/images/Guesthouses_category.png";
-import Hostels from "@/assets/images/Hostels_category.png";
-import Hotels from "@/assets/images/Hotels_category.png";
-import Houses from "@/assets/images/Houses_category.png";
+import Guesthouses from "@/assets/images/Guesthouses_category.webp";
+import Hostels from "@/assets/images/Hostels_category.webp";
+import Hotels from "@/assets/images/Hotels_category.webp";
+import Houses from "@/assets/images/Houses_category.webp";
 
 import { LINKS } from "@/config/pages-url.config";
 
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
       <div className="header__container">
         <Link to={LINKS.HOME} className="header__logo">
           <div>
-            <img src={Logo} alt="Group.png" />
+            <img src={Logo} alt="Group" />
           </div>
           <div className="text">Homey</div>
         </Link>
@@ -97,7 +97,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Houses} alt="flag" />
+                        <img src={Houses} alt="flag" loading="lazy" />
                         Houses
                       </li>
                     </SwiperSlide>
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Flats} alt="flag" />
+                        <img src={Flats} alt="flag" loading="lazy" />
                         Flats
                       </li>
                     </SwiperSlide>
@@ -121,7 +121,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Hotels} alt="flag" />
+                        <img src={Hotels} alt="flag" loading="lazy" />
                         Hotels
                       </li>
                     </SwiperSlide>
@@ -133,7 +133,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Hostels} alt="flag" />
+                        <img src={Hostels} alt="flag" loading="lazy" />
                         Hostels
                       </li>
                     </SwiperSlide>
@@ -145,7 +145,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Guesthouses} alt="flag" />
+                        <img src={Guesthouses} alt="flag" loading="lazy" />
                         Guesthouses
                       </li>
                     </SwiperSlide>
@@ -157,7 +157,7 @@ const Header: React.FC = () => {
                           dropdownMenuClick2();
                         }}
                       >
-                        <img src={Apartments} alt="flag" />
+                        <img src={Apartments} alt="flag" loading="lazy" />
                         Aparthotel
                       </li>
                     </SwiperSlide>

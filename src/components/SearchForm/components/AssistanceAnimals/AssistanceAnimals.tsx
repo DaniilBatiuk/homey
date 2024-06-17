@@ -2,7 +2,7 @@ import { Modal } from "@/components";
 
 import { ICONS } from "@/constants";
 
-import Pets from "@/assets/images/Pets.png";
+import Pets from "@/assets/images/Pets.webp";
 
 import "./AssistanceAnimals.scss";
 
@@ -19,7 +19,7 @@ export const AssistanceAnimals: React.FC<SupportProp> = ({
     <Modal active={activeModal} setActive={setActiveModal} maxDivWidth="800px">
       <div className="assistance-animals">
         {ICONS.menuClose({ onClick: () => setActiveModal(false) })}
-        <img src={Pets} alt="pets" className="assistance-animals__img" />
+        <img src={Pets} alt="pets" className="assistance-animals__img" loading="lazy" />
         <div className="assistance-animals__text">
           <div className="assistance-animals__title">Assistance animals</div>
           <div className="assistance-animals__subtitle">

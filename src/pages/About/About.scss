@@ -1,566 +1,567 @@
 @import "../../assets/styles/variables.scss";
 
-.about{
-    &__loyalty-programme-section {
-        height: clamp(450px, 60vw, 826px);
-        background-image: url("../../assets/images/About_us_main.png");
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.about {
+  &__loyalty-programme-section {
+    height: clamp(450px, 60vw, 826px);
+    background-image: url("../../assets/images/About_us_main.webp");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__how-can-you-help {
+    @media (min-width: 1161px) {
+      height: 730px;
+    }
+    @media (max-width: 1160px) {
+      height: 400px;
+    }
+    background-image: url("../../assets/images/Help.webp");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: 1161px) {
+      padding: 50px;
+    }
+    @media (max-width: 1160px) {
+      padding: 20px;
+    }
+  }
+
+  &__loyalty-programme-content {
+    margin-left: 30px;
+    max-width: 1265px;
+  }
+
+  &__text {
+    @extend %poppinsMedium35;
+    line-height: 1.6;
+    color: white;
+  }
+
+  &__how-can-you-help-text {
+    @extend %robotoRegular18;
+    line-height: 1.2;
+    color: white;
+  }
+
+  &__how-can-you-help-content {
+    button {
+      margin-top: 35px;
+      border-radius: 50px;
+      @media (min-width: 1161px) {
+        min-width: 204px;
+      }
+      @media (max-width: 1160px) {
+        min-width: 140px;
+      }
+      height: 50px;
+      background-color: #ff7924;
+      color: #fff;
     }
 
-    &__how-can-you-help{
-        @media (min-width: 1161px){
-            height: 730px;
-        }
-        @media (max-width: 1160px){
-            height: 400px;
-        }
-        background-image: url("../../assets/images/Help.png");
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        @media (min-width: 1161px){
-            padding: 50px;
-        }
-        @media (max-width: 1160px){
-            padding: 20px;
-        }
+    button:hover {
+      background: #db671e;
+    }
+  }
+
+  &__menu {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+  }
+
+  &__menu-mob {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+  }
+
+  $sticky-header-height: 60px;
+
+  &__links {
+    min-height: 148px;
+    background-color: #ff7924;
+  }
+
+  &__links-mob {
+    min-height: 46px;
+    background-color: #ff7924;
+  }
+
+  &__links-li {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__links-li-mob {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__text-li {
+    @extend %poppinsMedium25;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+      border-bottom: 1px solid black;
+    }
+  }
+
+  &__text-li-mob {
+    @extend %poppinsBold18_18;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+      border-bottom: 1px solid black;
+    }
+  }
+
+  &__text-container {
+    @extend %poppinsBold18_18;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
     }
 
-    &__loyalty-programme-content {
-        margin-left: 30px;
-        max-width: 1265px;
-    }
+    display: flex;
+    align-items: center; /* Vertically center the contents */
+    justify-content: center; /* Horizontally center the contents, if needed */
+    padding: 20px 0;
 
-    &__text {
+    .icon-spacing {
+      margin-left: 8px; /* Adjust the value as needed */
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__text-title {
+    @extend %poppinsMedium35;
+  }
+
+  &__company-big {
+    display: none;
+  }
+
+  &__company-mobile {
+    display: none;
+  }
+
+  &__company-card-mob {
+    .card-text {
+      color: white;
+
+      .text-title {
         @extend %poppinsMedium35;
-        line-height: 1.6;
-        color: white;
+      }
+
+      .text-content {
+        @extend %robotoRegular18;
+      }
+    }
+  }
+
+  &__charity-card-mob {
+    .card-text {
+      .text-title {
+        @extend %poppinsMedium35;
+      }
+
+      .text-content {
+        @extend %robotoRegular18;
+      }
+    }
+  }
+
+  @media (min-width: 1501px) {
+    &__menu-mob {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1500px) {
+    &__menu {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1161px) {
+    &__links {
+      padding: 54px 60px;
     }
 
-    &__how-can-you-help-text{
+    &__title {
+      padding: 54px 60px;
+    }
+
+    &__text-about-mob {
+      display: none;
+    }
+
+    &__company-big {
+      display: block;
+    }
+
+    &__company-mobile {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1160px) {
+    &__links {
+      padding: 20px;
+    }
+
+    &__title {
+      padding: 34px 40px;
+    }
+
+    &__text-about-mob {
+      display: block;
+    }
+
+    &__company-mobile {
+      display: block;
+    }
+
+    &__company-big {
+      display: none;
+    }
+
+    &__company-mob {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__company-card-mob {
+      min-height: 280px;
+      width: 100%;
+      background-color: #ff7924;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .card-text {
+        margin: 0px 20px;
+
+        .text-title {
+          margin-bottom: 30px;
+        }
+
+        .text-content {
+          line-height: 1.2;
+        }
+      }
+    }
+
+    &__company-card-foto-mob {
+      width: 100%;
+
+      .company-card-img-mob {
+        min-height: 280px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__charity-card-mob {
+      width: 100%;
+      min-height: 350px;
+      background-color: #ff7924;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .card-text {
+        margin: 0px 20px;
+        color: white;
+
+        .text-title {
+          margin-bottom: 30px;
+        }
+
+        .text-content {
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+
+  &__company {
+    display: flex;
+    min-height: 410px;
+  }
+
+  &__charity-container {
+    display: none;
+  }
+
+  &__charity-container-mob {
+    display: none;
+  }
+
+  @media (min-width: 1161px) {
+    &__charity-container {
+      display: flex;
+      min-height: 730px;
+    }
+  }
+
+  @media (max-width: 1160px) {
+    &__charity-container {
+      display: none;
+    }
+
+    &__charity-container-mob {
+      display: block;
+    }
+
+    &__charity-card-foto-mob {
+      width: 100%;
+
+      .charity-card-img-mob {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__company-card {
+    width: 50%;
+    background-color: #ff7924;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .card-text {
+      margin: 0px 20px;
+      color: white;
+
+      .text-title {
+        margin-bottom: 30px;
+        @extend %poppinsMedium35;
+      }
+
+      .text-content {
         @extend %robotoRegular18;
         line-height: 1.2;
-        color: white;
+      }
     }
+  }
 
-    &__how-can-you-help-content{
-        button{
-            margin-top: 35px;
-            border-radius: 50px;
-            @media (min-width: 1161px){
-                min-width: 204px;
-            }
-            @media (max-width: 1160px){
-                min-width: 140px;
-            }
-            height: 50px;
-            background-color: #FF7924;
-            color: #fff;
-        }
+  &__charity-card {
+    width: 50%;
+    background-color: #ff7924;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-        button:hover{
-            background: #db671e;
-        }
-    }
+    .card-text {
+      margin: 0px 20px;
+      color: white;
 
-    &__menu{
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0; 
-        background: white; 
-        z-index: 2; 
-    }
-
-    &__menu-mob{
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0; 
-        background: white; 
-        z-index: 2; 
-    }
-
-    $sticky-header-height: 60px;
-
-    &__links{
-        min-height: 148px;
-        background-color: #FF7924;
-    }
-
-    &__links-mob{
-        min-height: 46px;
-        background-color: #FF7924;
-    }
-
-    &__links-li{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    &__links-li-mob{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding-bottom: 20px;
-    }
-
-    &__text-li{
-        @extend %poppinsMedium25;
-        color: #fff;
-
-        &:hover {
-            color: #fff;
-            border-bottom: 1px solid black;
-        }
-    }
-
-    &__text-li-mob{
-        @extend %poppinsBold18_18;
-        color: #fff;
-
-        &:hover {
-            color: #fff;
-            border-bottom: 1px solid black;
-        }
-    }
-
-    &__text-container {
-        @extend %poppinsBold18_18;
-        color: #fff;
-
-        &:hover {
-            color: #fff;
-        }
-        
-        display: flex;
-        align-items: center; /* Vertically center the contents */
-        justify-content: center; /* Horizontally center the contents, if needed */
-        padding: 20px 0;
-
-        .icon-spacing {
-            margin-left: 8px; /* Adjust the value as needed */
-        }
-    }
-
-
-    &__title{
-        text-align: center;
-    }
-
-    &__text-title{
+      .text-title {
+        margin-bottom: 30px;
         @extend %poppinsMedium35;
+      }
+
+      .text-content {
+        @extend %robotoRegular18;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  &__company-card-foto,
+  &__charity-card-foto {
+    width: 50%;
+
+    .company-card-img,
+    .charity-card-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__our-team {
+    .our-team-text {
+      @extend %poppinsMedium18_20;
+      line-height: 1.6;
     }
 
-    &__company-big{
-        display: none;
+    .our-team-cardscontainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
+  }
 
-    &__company-mobile{
-        display: none;
+  @media (min-width: 1161px) {
+    &__achievements-cardcontainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
+  }
 
-    &__company-card-mob{
-        .card-text{
-            color: white;
-
-            .text-title{
-                @extend %poppinsMedium35;
-            }
-
-            .text-content{
-                @extend %robotoRegular18;
-            }
-        }
+  @media (max-width: 1160px) {
+    &__achievements-cardcontainer > div:nth-child(2) {
+      margin: 20px 0px;
     }
+  }
 
-    &__charity-card-mob{
-        .card-text{
-            .text-title{
-                @extend %poppinsMedium35;
-            }
-
-            .text-content{
-                @extend %robotoRegular18;
-            }
-        }
+  &__charity {
+    .charity-text {
+      @extend %poppinsMedium18_20;
+      line-height: 1.6;
+      margin-bottom: 35px;
     }
+  }
+}
 
-    @media (min-width: 1501px) {
-        &__menu-mob{
-            display: none;
-        }
-    }
-
-    @media (max-width: 1500px) {
-        &__menu{
-            display: none;
-        }
-    }
-
+.card {
+  &__config {
     @media (min-width: 1161px) {
-        &__links {
-            padding: 54px 60px;
-        }
-
-        &__title{
-            padding: 54px 60px;
-        }
-    
-        &__text-about-mob{
-            display: none;
-        }
-
-        &__company-big{
-            display: block;
-        }
-
-        &__company-mobile{
-            display: none;
-        }
+      height: 730px;
+      width: 462px;
     }
 
     @media (max-width: 1160px) {
-        &__links {
-            padding: 20px;
-        }
-
-        &__title{
-            padding: 34px 40px;
-        }
-    
-        &__text-about-mob{
-            display: block;
-        }
-
-        &__company-mobile{
-            display: block;
-        }
-
-        &__company-big{
-            display: none;
-        }
-
-        &__company-mob{
-            display: flex;
-            flex-direction: column;
-        }
-
-        &__company-card-mob{
-            min-height: 280px;
-            width: 100%;
-            background-color: #FF7924;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-    
-            .card-text{
-                margin: 0px 20px;
-    
-                .text-title{
-                    margin-bottom: 30px;
-                }
-    
-                .text-content{
-                    line-height: 1.2;
-                }
-            }
-        }
-
-        &__company-card-foto-mob{
-            width: 100%;
-    
-            .company-card-img-mob{
-                min-height: 280px;
-                width: 100%;
-                object-fit: cover;
-            }
-        } 
-
-        &__charity-card-mob{
-            width: 100%;
-            min-height: 350px;
-            background-color: #FF7924;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            .card-text{
-                margin: 0px 20px;
-                color: white;
-
-                .text-title{
-                    margin-bottom: 30px;
-                }
-
-                .text-content{
-                    line-height: 1.2;
-                }
-            }
-        }
+      width: 100%;
     }
 
-    &__company{
-        display: flex;
-        min-height: 410px;
+    border: 1px solid rgb(0, 0, 0, 0.25);
+    margin-top: 35px;
+
+    .team-member-card-img {
+      width: 100%;
+
+      .card_img {
+        width: 100%;
+        height: 65%;
+        object-fit: cover;
+      }
     }
 
-    &__charity-container{
-        display: none;
-    }
+    .card-context {
+      margin: 25px 15px;
 
-    &__charity-container-mob{
-        display: none;
-    }
+      .card-name {
+        @extend %poppinsMedium18_25;
+        margin-bottom: 20px;
+      }
 
-    @media (min-width: 1161px){
-        &__charity-container{
-            display: flex;
-            min-height: 730px;   
+      .card-description {
+        @extend %robotoRegular18;
+        line-height: 1.2;
+      }
+
+      .learn-more {
+        margin-top: 20px;
+
+        .card-learn-more {
+          @extend %robotoBold18;
+          text-decoration: underline;
+
+          .learn-more-icon {
+            transform: rotate(-45deg);
+          }
         }
+      }
+    }
+  }
+
+  &__config-info {
+    .card-description-div {
+      .card-description {
+        @extend %poppinsMedium18_25;
+        line-height: 1.6;
+      }
     }
 
-    @media (max-width: 1160px){
-        &__charity-container{
-            display: none;
-        }
+    @media (min-width: 1161px) {
+      width: 355px;
+      height: 502px;
 
-        &__charity-container-mob{
-            display: block;
-        }
+      .achievements-card-img {
+        width: 90%;
 
-        &__charity-card-foto-mob{
-            width: 100%;
-
-            .charity-card-img-mob{
-                width: 100%;
-                height: 350px;
-                object-fit: cover;
-            }
+        .card_img_info {
+          width: 100%;
+          height: 65%;
+          object-fit: cover;
         }
+      }
+
+      .card-description-div {
+        padding-top: 20px;
+        text-align: center;
+      }
     }
-    
-    &__company-card{
+
+    @media (min-width: 431px) and (max-width: 1160px) {
+      display: flex;
+      height: 180px;
+
+      .achievements-card-img {
         width: 50%;
-        background-color: #FF7924;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        text-align: center;
 
-        .card-text{
-            margin: 0px 20px;
-            color: white;
-
-            .text-title{
-                margin-bottom: 30px;
-                @extend %poppinsMedium35;
-            }
-
-            .text-content{
-                @extend %robotoRegular18;
-                line-height: 1.2;
-            }
+        .card_img_info {
+          height: 100%;
+          object-fit: cover;
         }
-    }
+      }
 
-    &__charity-card{
+      .card-description-div {
         width: 50%;
-        background-color: #FF7924;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .card-text{
-            margin: 0px 20px;
-            color: white;
-
-            .text-title{
-                margin-bottom: 30px;
-                @extend %poppinsMedium35;
-            }
-
-            .text-content{
-                @extend %robotoRegular18;
-                line-height: 1.2;
-            }
-        }
+        align-items: center;
+        margin-left: 5px;
+      }
     }
 
-    &__company-card-foto, &__charity-card-foto{
+    @media (max-width: 431px) {
+      display: flex;
+      height: 180px;
+
+      .achievements-card-img {
         width: 50%;
 
-        .company-card-img, .charity-card-img{
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+        .card_img_info {
+          width: 100%;
+          object-fit: cover;
         }
+      }
+
+      .card-description-div {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        margin-left: 5px;
+      }
     }
-
-    &__our-team{
-        .our-team-text{
-            @extend %poppinsMedium18_20;
-            line-height: 1.6;
-        }
-
-        .our-team-cardscontainer{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-    }
-
-    @media (min-width: 1161px){
-        &__achievements-cardcontainer{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-    }
-
-    @media (max-width: 1160px){
-        &__achievements-cardcontainer > div:nth-child(2){
-            margin: 20px 0px;
-        }
-    }
-
-    &__charity{
-        .charity-text{
-            @extend %poppinsMedium18_20;
-            line-height: 1.6;
-            margin-bottom: 35px;
-        }
-    }
-}
-
-.card{
-    &__config{
-        @media (min-width: 1161px){
-            height: 730px;
-            width: 462px;
-        }
-
-        @media (max-width: 1160px){
-            width: 100%;
-        }
-        
-        border: 1px solid rgb(0,0,0,0.25);
-        margin-top: 35px;
-
-        .team-member-card-img{
-            width: 100%;
-
-            .card_img{
-                width: 100%;
-                height: 65%;
-                object-fit: cover;
-            }
-        }
-
-        .card-context{
-            margin: 25px 15px;
-
-            .card-name{
-                @extend %poppinsMedium18_25;
-                margin-bottom: 20px;
-            }
-
-            .card-description{
-                @extend %robotoRegular18;
-                line-height: 1.2;
-            }
-
-            .learn-more{
-                margin-top: 20px;
-
-                .card-learn-more{
-                    @extend %robotoBold18;
-                    text-decoration: underline;
-
-                    .learn-more-icon{
-                        transform: rotate(-45deg);
-                    }
-                }
-            }
-        }
-    }
-
-    &__config-info{
-        .card-description-div{
-            .card-description{
-                @extend %poppinsMedium18_25;
-                line-height: 1.6;
-            }
-        }
-
-        @media (min-width: 1161px){
-            width: 355px;
-            height: 502px;
-
-            .achievements-card-img{
-                width: 90%;
-
-                .card_img_info{
-                    width: 100%;
-                    height: 65%;
-                    object-fit: cover;
-                }
-            }
-
-            .card-description-div{
-                padding-top: 20px;
-                text-align: center;
-            }
-        }
-
-        @media (min-width: 431px) and (max-width: 1160px){
-            display: flex;
-            height: 180px;
-
-            .achievements-card-img{
-                width: 50%;
-                text-align: center;
-
-                .card_img_info{
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-
-            .card-description-div{
-                width: 50%;
-                display: flex;
-                align-items: center;
-                margin-left: 5px;
-            }
-        } 
-
-        @media (max-width: 431px){
-            display: flex;
-            height: 180px;
-
-            .achievements-card-img{
-                width: 50%;
-
-                .card_img_info{
-                    width: 100%;
-                    object-fit: cover;
-                }
-            }
-
-            .card-description-div{
-                width: 50%;
-                display: flex;
-                align-items: center;
-                margin-left: 5px;
-            }
-        } 
-    }
+  }
 }

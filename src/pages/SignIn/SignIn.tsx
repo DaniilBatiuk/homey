@@ -12,7 +12,7 @@ import { ICONS } from "@/constants";
 
 import { authService, saveTokensStorage } from "@/services";
 
-import SingIn from "@/assets/images/SingIn.png";
+import SingIn from "@/assets/images/SingIn.webp";
 
 import { LINKS } from "@/config/pages-url.config";
 
@@ -83,7 +83,7 @@ const SignIn: React.FC = withAuth(() => {
   return (
     <section className="login">
       <div className="login__img-half">
-        <img src={SingIn} alt="sing_in" className="login__img" />
+        <img src={SingIn} alt="sing_in" className="login__img" loading="lazy" />
         <Link to={LINKS.SIGNUP} className="login__img-link">
           Sign up{ICONS.cardArrow()}
         </Link>

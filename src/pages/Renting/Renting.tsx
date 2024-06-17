@@ -104,7 +104,7 @@ const Renting: React.FC = () => {
       <section className="renting__header">
         <Link to={LINKS.HOME} className="header__logo">
           <div>
-            <img src={Logo} alt="Group.png" />
+            <img src={Logo} alt="Group" loading="lazy" />
           </div>
           <div className="text">Homey</div>
         </Link>

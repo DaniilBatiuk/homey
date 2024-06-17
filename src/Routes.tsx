@@ -24,7 +24,13 @@ const Home = React.lazy(() => import("./pages/Home/Home"));
 export function Routes() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<CircularProgress />}>
+      <Suspense
+        fallback={
+          <div className="loader">
+            <CircularProgress />
+          </div>
+        }
+      >
         <ReactRoutes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

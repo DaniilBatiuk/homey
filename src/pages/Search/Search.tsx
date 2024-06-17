@@ -10,7 +10,7 @@ import { ICONS } from "@/constants";
 
 import { useSearch } from "@/hooks";
 
-import Search_main from "@/assets/images/search_main.png";
+import Search_main from "@/assets/images/search_main.webp";
 
 import { CircularProgress, Slider } from "@mui/material";
 
@@ -33,7 +33,12 @@ const Search: React.FC = () => {
     <div className="filter">
       <div className="filter__header">
         <div className="filter__header-main">
-          <img src={Search_main} alt="Main Photo" className="filter__img" />
+          <img
+            src={Search_main}
+            alt="Main Photo"
+            className="filter__img background-gray"
+            loading="lazy"
+          />
           <div className="filter__text">Find a place where you feel at home</div>
         </div>
         <SearchForm />
